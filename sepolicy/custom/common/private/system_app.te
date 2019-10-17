@@ -9,3 +9,6 @@ get_prop(system_app, vendor_security_patch_level_prop)
 hal_client_domain(system_app, hal_lineage_fastcharge)
 hal_client_domain(system_app, hal_lineage_livedisplay)
 hal_client_domain(system_app, hal_lineage_touch)
+
+#selinux status
+allow system_app selinuxfs:file r_file_perms;
