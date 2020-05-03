@@ -204,6 +204,10 @@ USE_DEVICE_SPECIFIC_GPS := true
 # FOD
 TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.xiaomi_grus
 
+# Init
+#TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_grus
+#TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_grus
+
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml
 DEVICE_MATRIX_FILE := $(DEVICE_PATH)/compatibility_matrix.xml
