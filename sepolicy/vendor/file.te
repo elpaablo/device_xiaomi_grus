@@ -30,3 +30,5 @@ type kcal_dev, sysfs_type, fs_type;
 
 # FPS Info
 type sysfs_fps, sysfs_type, fs_type;
+
+type public_adsprpcd_file, file_type;
