@@ -66,7 +66,11 @@
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi                                      u:object_r:hal_ir_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service-qti                                                           u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock			                   u:object_r:hal_power_stats_default_exec:s0
+<<<<<<< HEAD
 /vendor/bin/hw/vendor\.qti\.memory\.pasrmanager\@1\.0-service                                                  u:object_r:hal_pasrmanager_memory_qti_exec:s0
+=======
+/vendor/bin/hw/vendor\.qti\.memory\.pasrmanager\@1\.0-service                                           u:object_r:hal_pasrmanager_memory_qti_exec:s0
+>>>>>>> 1cf235210 (sdm845-common: sepolicy: Add policy for new pasr hal)
 
 # Persist files
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0

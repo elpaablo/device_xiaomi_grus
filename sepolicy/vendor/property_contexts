@@ -21,6 +21,23 @@ vendor.fps_hal.            u:object_r:vendor_fp_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay.ifaa              u:object_r:vendor_tee_listener_prop:s0
+persist.vendor.sys.provision.status      u:object_r:vendor_tee_listener_prop:s0
+
+# NFC
+persist.nfc.               u:object_r:nfc_prop:s0
+
+#Persist
+persist.ppd.fde.config     u:object_r:default_prop:s0
+
+# PASR
+vendor.pasr.                             u:object_r:vendor_pasr_prop:s0
+ro.vendor.pasr.                          u:object_r:vendor_pasr_prop:s0
+
+# Recovery
+ro.build.expect.           u:object_r:exported_default_prop:s0
+
+# Sensors
+persist.sensor.sardisable  u:object_r:sensors_prop:s0
 
 # Thermal
 sys.thermal.               u:object_r:thermal_engine_prop:s0
