@@ -175,10 +175,9 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service \
     libxml2 \
     libdng_sdk.vendor \
-    vendor.qti.hardware.camera.device@1.0.vendor \
+    vendor.qti.hardware.camera.device@3.2.vendor \
     camera.shim \
 
 # CODEC 2
