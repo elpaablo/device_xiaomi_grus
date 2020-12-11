@@ -140,6 +140,8 @@ TARGET_USES_QTI_CAMERA_DEVICE := true
 BOARD_QTI_CAMERA_32BIT_ONLY := true
 TARGET_USES_EASEL := true
 BOARD_USES_EASEL := true
+TARGET_LD_SHIM_LIBS := \
+    system/lib/libcameraservice.so|libmedia_jni_shim.so
 
 # ANT+
 #BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"

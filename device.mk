@@ -179,6 +179,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     vendor.qti.hardware.camera.device@3.2.vendor \
     camera.shim \
+		libmedia_jni_shim
 
 # CODEC 2
 PRODUCT_PACKAGES += \
