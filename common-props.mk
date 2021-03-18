@@ -18,7 +18,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.HAL3.enabled=1 \
     persist.vendor.camera.eis.enable=1 \
     persist.camera.facepp.fdenable=0 \
-    vendor.camera.aux.packagelist=com.google.android.GoogleCamera,org.codeaurora.snapcam,com.GoogleCamera.Burial11
+    persist.camera.dualcal.state=1 \
+    vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.GoogleCamera.Burial11
 
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -40,7 +41,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.display.type=oled \
     persist.debug.force_burn_in=true \
     persist.sys.sf.native_mode=0 \
-    persist.sys.sf.color_saturation=1.0 \
+    persist.sys.sf.color_saturation=1.3 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372
 
@@ -84,9 +85,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.vendor.qti.core_ctl_min_cpu=2 \
-    ro.vendor.qti.core_ctl_max_cpu=4 \
+    ro.vendor.qti.core_ctl_max_cpu=6 \
     vendor.iop.enable_prefetch_ofr=0 \
-    vendor.iop.enable_uxe=0 \
+    vendor.iop.enable_uxe=1 \
     persist.vendor.perfservice.disable=1
 
 # RCS and IMS

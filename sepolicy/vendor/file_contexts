@@ -52,8 +52,8 @@
 # HALs
 /vendor/bin/hw/android\.hardware\.biometrics\.fingerprint@2\.1-service\.xiaomi_sdm845                   u:object_r:hal_fingerprint_default_exec:s0
 /vendor/bin/hw/android\.hardware\.light@2\.0-service\.xiaomi_sdm845                                     u:object_r:hal_light_default_exec:s0
-/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.1-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
-/vendor/bin/hw/android\.hardware\.power@1\.2-service\.xiaomi_sdm845                                     u:object_r:hal_power_default_exec:s0
+/vendor/bin/hw/android\.hardware\.neuralnetworks@1\.2-service-qti                                       u:object_r:hal_neuralnetworks_default_exec:s0
+/vendor/bin/hw/android\.hardware\.power@1\.3-service\.xiaomi_sdm845                                     u:object_r:hal_power_default_exec:s0
 /vendor/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_sdm845                                 u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Persist files
@@ -70,5 +70,14 @@
 /dev/socket/gps                               u:object_r:gps_socket:s0
 
 # Kernel profiles helper
-/system/bin/kernel_profiles_helper    u:object_r:kphelper_exec:s0
+/vendor/bin/kernel_profiles_helper     u:object_r:helper_exec:s0
+
+# gboard theme patcher
+/vendor/bin/gboard_theme_patcher       u:object_r:patcher_exec:s0
+
+# dcim observer
+//vendor/bin/dcim_observer              u:object_r:observer_exec:s0
+
+# dcim broadcaster
+/vendor/bin/dcim_broadcaster           u:object_r:broadcaster_exec:s0                   
 

@@ -1,0 +1,6 @@
+# gboard_theme_patcher service
+type patcher, domain;
+type patcher_exec, exec_type, file_type;
+
+init_daemon_domain(patcher)
+

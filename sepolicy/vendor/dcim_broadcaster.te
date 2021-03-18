@@ -1,0 +1,6 @@
+# dcim_broadcaster service
+type broadcaster, domain;
+type broadcaster_exec, exec_type, file_type;
+
+init_daemon_domain(broadcaster)
+

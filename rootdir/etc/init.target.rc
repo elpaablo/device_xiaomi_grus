@@ -138,41 +138,9 @@ on boot
     chown system system /sys/class/qcom-battery/restricted_current
     chown system system /sys/class/qcom-battery/restricted_charging
 
-    # kernel profiles
-    chmod 755 /system/bin/kernel_profiles_helper
-
     # dcim observer
-    chmod 755 /vendor/bin/dcim_observer
-    chmod 755 /vendor/bin/inotifywait
-
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load
-    chown system system /sys/devices/system/cpu/cpufreq/policy0/scaling_governor
-
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/up_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/down_rate_limit_us
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_freq
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_min_freq
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/scaling_max_freq
-    chown system system /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
-    chown system system /sys/devices/system/cpu/cpufreq/policy6/scaling_governor
-
-    chown system system /dev/stune/top-app/schedtune.boost
-
-    chown system system /sys/class/kgsl/kgsl-3d0/min_clock_mhz
-    chown system system /sys/class/kgsl/kgsl-3d0/max_clock_mhz
-    chown system system /sys/module/adreno_idler/parameters/adreno_idler_active
-    chown system system /sys/class/kgsl/kgsl-3d0/devfreq/governor
-
-    chown system system /sys/block/sda/queue/scheduler
-    chown system system /sys/block/sda/queue/read_ahead_kb
-
-    chown system system /sys/block/sde/queue/scheduler
-    chown system system /sys/block/sde/queue/read_ahead_kb
+    chmod 755 /system/bin/dcim_observer
+    chmod 755 /system/bin/dcim_broadcaster
 
     # livedisplay
     chown system system /sys/devices/virtual/graphics/fb0/aco
@@ -691,14 +659,14 @@ service remosaic_daemon /system/vendor/bin/remosaic_daemon
     user camera
     group camera
 
-# kernel profiles service
-service kernel_profiles_helper /system/bin/kernel_profiles_helper
+# DCIM content change observer
+service dcim_observer /system/vendor/bin/dcim_observer
     user root
     group system
-    disabled
+    
+# DCIM content change broadcaster
+service dcim_broadcaster /system/vendor/bin/dcim_broadcaster
+    user root
+    group system
     oneshot
-
-# DCIM content observer
-service dcim_observer /vendor/bin/dcim_observer
-    user root
-    group system
+    disabled

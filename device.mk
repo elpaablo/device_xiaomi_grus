@@ -91,7 +91,7 @@ PRODUCT_COPY_FILES += \
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
-    
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService
@@ -99,12 +99,12 @@ PRODUCT_PACKAGES += \
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
-    android.hardware.audio@2.0-service \
     android.hardware.audio@6.0 \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@2.0-impl \
     android.hardware.audio.effect@6.0 \
     android.hardware.audio.effect@6.0-impl \
+    android.hardware.audio.service \
     android.hardware.soundtrigger@2.2-impl \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@6.0 \
@@ -133,6 +133,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
+    $(LOCAL_PATH)/audio/audio_platform_info_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_i2s.xml \
     $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/etc_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
@@ -148,6 +149,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_overlay_static.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_overlay_static.xml \
     $(LOCAL_PATH)/audio/mixer_paths_skuw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_skuw.xml \
     $(LOCAL_PATH)/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \
+    $(LOCAL_PATH)/audio/mixer_paths_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_i2s.xml \
     $(LOCAL_PATH)/audio/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
@@ -176,9 +178,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     libxml2 \
     libdng_sdk.vendor \
+    vendor.qti.hardware.camera.device@1.0.vendor \
     camera.shim \
-    vendor.qti.hardware.camera.device@1.0 \
-#    vendor.qti.hardware.camera.device@1.0.vendor \
 
 # CODEC 2
 PRODUCT_PACKAGES += \
@@ -190,7 +191,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
-    
+
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
@@ -218,12 +219,12 @@ PRODUCT_PACKAGES += \
     libqdMetaData.system \
     libtinyxml \
     libvulkan \
-    vendor.display.config@1.7.vendor \
-    vendor.display.config@1.7 \
+    vendor.display.config@2.0.vendor \
+    vendor.display.config@2.0 \
     vendor.qti.hardware.display.allocator@1.0-service \
     vendor.qti.hardware.display.mapper@3.0.vendor \
     libsdm-disp-vndapis
-    
+
 # Display calibration
 PRODUCT_PACKAGES += \
      vendor.lineage.livedisplay@2.0-service.xiaomi
@@ -275,7 +276,7 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl:64 \
     android.hardware.health@2.1-impl.recovery \
     android.hardware.health@2.1-service
-    
+
 # HWBinder
 PRODUCT_PACKAGES += \
     libhwbinder \
@@ -291,6 +292,7 @@ PRODUCT_PACKAGES += \
     init.qcom.usb.rc \
     init.safailnet.rc \
     init.recovery.qcom.rc \
+    init.kernel.rc \
     ueventd.qcom.rc \
     init.qcom.post_boot.sh \
     fstab.qcom
@@ -312,7 +314,7 @@ PRODUCT_PACKAGES += \
 # IRSC
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
-    
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.grus \
@@ -454,7 +456,7 @@ PRODUCT_PACKAGES += \
     qti-telephony-utils \
     qti_telephony_utils.xml \
     telephony-ext
-   
+
 # Telephony
 PRODUCT_BOOT_JARS += \
     telephony-ext
@@ -462,7 +464,7 @@ PRODUCT_BOOT_JARS += \
 # TextClassifier
 PRODUCT_PACKAGES += \
     textclassifier.bundle1
-    
+
 # Thermal
 PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
@@ -533,7 +535,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libaacwrapper \
     libnl \
-    
+
 # Wifi display
 PRODUCT_BOOT_JARS += \
     WfdCommon
@@ -563,6 +565,7 @@ PRODUCT_PACKAGES += \
 
 # Custom init services
 PRODUCT_PACKAGES += \
-	kernel_profiles_helper \
     dcim_observer \
-   
+
+# ANXCamera
+$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)

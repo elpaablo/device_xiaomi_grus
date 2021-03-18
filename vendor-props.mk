@@ -73,5 +73,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.gralloc.enable_fb_ubwc=1 \
     ro.surface_flinger.supports_background_blur=1 \
     ro.sf.blurs_are_expensive=1 \
-    vendor.iop.enable_uxe=1
+    ro.min.fling_velocity=200 \
+    ro.max.fling_velocity=20000
 

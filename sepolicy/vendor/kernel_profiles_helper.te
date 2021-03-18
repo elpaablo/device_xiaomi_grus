@@ -1,3 +1,6 @@
-typeattribute kphelper coredomain;
+# dcim_helper service
+type helper, domain;
+type helper_exec, exec_type, file_type;
 
-domain_auto_trans(init, kphelper_exec, kphelper)
+init_daemon_domain(helper)
+

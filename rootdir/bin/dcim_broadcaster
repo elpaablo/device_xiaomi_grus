@@ -1,0 +1,7 @@
+#!/system/bin/sh
+
+set -e
+DCIMURI="file:///storage/emulated/0/DCIM/"
+/system/bin/am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d $DCIMURI || true
+
+

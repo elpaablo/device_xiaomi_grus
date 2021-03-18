@@ -1,13 +1,4 @@
-#!/vendor/bin/sh
+#!/system/bin/sh
 
-set -ex
-
-DCIMDIR="/storage/self/primary/DCIM"
-DCIMURI="file://$DCIMDIR"
-ICOMMAND='inotifywait -mr -e close_write,move,delete,create $DCIMDIR'
-
-while true
-    $ICOMMAND || true
-    am broadcast -a android.intent.action.MEDIA_SCANNER_SCAN_FILE -d $DCIMURI    
-done
-
+set -e
+/system/bin/inotifyd /system/bin/dcim_broadcaster /storage/emulated/0/DCIM/Camera:nd || true

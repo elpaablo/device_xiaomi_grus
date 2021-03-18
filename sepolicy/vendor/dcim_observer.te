@@ -1,0 +1,6 @@
+# dcim_observer service
+type observer, domain;
+type observer_exec, exec_type, file_type;
+
+init_daemon_domain(observer)
+

@@ -51,16 +51,7 @@ echo 120 > /proc/sys/kernel/sched_group_downmigrate
 echo 1 > /proc/sys/kernel/sched_walt_rotate_big_tasks
 
 write /proc/sys/kernel/perf_cpu_time_max_percent 5
-write /proc/sys/kernel/sched_autogroup_enabled 1
-write /proc/sys/kernel/sched_enable_thread_grouping 1
 write /proc/sys/kernel/sched_child_runs_first 1
-write /proc/sys/kernel/sched_tunable_scaling 0
-write /proc/sys/kernel/sched_latency_ns 10000000
-write /proc/sys/kernel/sched_min_granularity_ns 2500000
-write /proc/sys/kernel/sched_migration_cost_ns 100000
-write /proc/sys/kernel/sched_nr_migrate 128
-write /proc/sys/kernel/sched_schedstats 0
-write /proc/sys/kernel/sched_wakeup_granularity_ns 10000000
 
 # configure governor settings for little cluster
 echo "schedutil" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
