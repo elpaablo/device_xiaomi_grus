@@ -23,8 +23,8 @@
     <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
     <integer name="config_sysCPUTempMultiplier">10000</integer>
     <integer name="config_sysBatteryTempMultiplier">10</integer>
-    
-    <!-- Default values for LiveDisplay 
+
+    <!-- Default values for LiveDisplay
     <integer name="config_dayColorTemperature">6500</integer>
     <integer name="config_nightColorTemperature">4800</integer>
     <integer name="config_outdoorAmbientLux">12000</integer>
@@ -43,12 +43,14 @@
     <bool name="config_defaultAutoOutdoorMode">false</bool>
     <bool name="config_defaultColorEnhancement">true</bool>
     <bool name="config_defaultCABC">false</bool>
-    
+
      <!-- Default fod pressed color -->
     <integer name="config_fod_pressed_color">1</integer>
-    
+
     <!-- Default value for FOD animation package resources -->
     <string name="config_fodAnimationPackage" translatable="false">org.aospextended.fod.animations</string>
-    
-</resources>
 
+    <!-- -1 means use same as config_screenBrightnessDoze -->
+    <integer name="config_screenBrightnessPulse">10</integer>
+
+</resources>
