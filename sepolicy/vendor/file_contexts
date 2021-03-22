@@ -48,6 +48,9 @@
 # FOD
 /sys/devices/virtual/touch/tp_dev/fod_status  u:object_r:sysfs_fod:s0
 
+# FPS Info
+/sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
+
 # GPS devices
 /dev/bbd_control                              u:object_r:gps_device:s0
 /dev/bbd_patch                                u:object_r:gps_device:s0
