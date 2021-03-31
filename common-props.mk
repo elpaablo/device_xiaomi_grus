@@ -72,7 +72,9 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Media
 PRODUCT_PROPERTY_OVERRIDES += \
-    audio.offload.video=true
+    audio.offload.video=true \
+    debug.stagefright.omx_default_rank=0 \
+    media.settings.xml=/vendor/etc/media_profiles_vendor.xml
 
 # Memory optimizations
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -145,6 +147,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 # WFD
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.wfd.virtual=0
+
+# ZRAM
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.zram.first_wb_delay_mins=180 \
+    ro.zram.mark_idle_delay_mins=60 \
+    ro.zram.periodic_wb_delay_hours=24
 
 # FP
 PRODUCT_PROPERTY_OVERRIDES += \
