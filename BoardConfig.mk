@@ -283,7 +283,8 @@ TARGET_CRYPTFS_HW_PATH ?= vendor/qcom/opensource/cryptfs_hw
 TARGET_PROVIDES_LIBLIGHT := false
 
 # Power
-TARGET_TAP_TO_WAKE_NODE := "/dev/input/event2"
+#TARGET_TAP_TO_WAKE_NODE := "/dev/input/event2"
+TARGET_POWERHAL_MODE_EXT := $(DEVICE_PATH)/power/power-mode.cpp
 
 # Camera
 TARGET_FACE_UNLOCK_CAMERA_ID := 1
