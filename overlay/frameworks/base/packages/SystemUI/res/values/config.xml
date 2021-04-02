@@ -23,18 +23,24 @@
     <!-- Enabke Burn in protection -->
     <bool name="config_statusBarBurnInProtection">true</bool>
 
-    <!-- Doze: check proximity sensor before pulsing? -->
-    <bool name="doze_proximity_check_before_pulse">true</bool>
-
     <!-- Doze: does this device support STATE_DOZE?  -->
     <bool name="doze_display_state_supported">true</bool>
 
     <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
     <bool name="doze_suspend_display_state_supported">false</bool>
 
-    <integer name="config_maxVisibleNotificationIcons">6</integer>
+    <!-- Doze: should the significant motion sensor be used as a pulse signal? -->
+    <bool name="doze_pulse_on_significant_motion">false</bool>
+
+    <!-- Doze: check proximity sensor before pulsing? -->
+    <bool name="doze_proximity_check_before_pulse">false</bool>
+
+    <!-- Doze: should notifications be used as a pulse signal? -->
+    <bool name="doze_pulse_on_notifications">true</bool>
+
+    <integer name="config_maxVisibleNotificationIcons">5</integer>
     <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
-    <integer name="config_maxVisibleStatusIconContainer">7</integer>
+    <integer name="config_maxVisibleStatusIconContainer">5</integer>
     
     <!-- The default tiles to display in QuickSettings -->
     <string name="quick_settings_tiles_default" translatable="false">
@@ -45,7 +51,7 @@
     <integer name="quick_settings_min_num_tiles">6</integer>
     <integer name="quick_settings_num_columns">6</integer>
     
-    <!--string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string-->
+    <string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string>
 
     
     <!-- Launcher package name for overlaying icons. -->
