@@ -142,22 +142,6 @@ on boot
     chmod 755 /system/bin/dcim_observer
     chmod 755 /system/bin/dcim_broadcaster
 
-    # livedisplay
-    chown system system /sys/devices/virtual/graphics/fb0/aco
-    chmod 0660 /sys/devices/virtual/graphics/fb0/aco
-    chown system system /sys/devices/virtual/graphics/fb0/cabc
-    chmod 0660 /sys/devices/virtual/graphics/fb0/cabc
-    chown system system /sys/devices/virtual/graphics/fb0/hbm
-    chmod 0660 /sys/devices/virtual/graphics/fb0/hbm
-    chown system system /sys/devices/virtual/graphics/fb0/rgb
-    chmod 0660 /sys/devices/virtual/graphics/fb0/rgb
-    chown system system /sys/devices/virtual/graphics/fb0/sre
-    chmod 0660 /sys/devices/virtual/graphics/fb0/sre
-    chown system system /sys/devices/virtual/graphics/fb0/color_enhance
-    chmod 0660 /sys/devices/virtual/graphics/fb0/color_enhance
-    chown system system /sys/devices/virtual/graphics/fb0/reading_mode
-    chmod 0660 /sys/devices/virtual/graphics/fb0/reading_mode
-
 ####
 
     start rmt_storage
@@ -185,7 +169,7 @@ on boot
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
-    chown system system /sys/class/backlight/panel0-backlight/brightness_clone
+    chown system system /sys/class/backlight/panel0-backlight/brightness
 
 #Load WLAN driver
     insmod /vendor/lib/modules/qca_cld3_wlan.ko

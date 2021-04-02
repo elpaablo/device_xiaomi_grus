@@ -20,7 +20,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.facepp.fdenable=0 \
     persist.camera.dualcal.state=1 \
     vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.GoogleCamera.Burial11
-
+    
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.cne.feature=1 \
