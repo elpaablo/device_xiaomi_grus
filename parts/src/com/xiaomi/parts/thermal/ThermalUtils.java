@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.thermal;
+package com.xiaomi.parts.thermal;
 
 import android.content.Context;
 import android.content.Intent;

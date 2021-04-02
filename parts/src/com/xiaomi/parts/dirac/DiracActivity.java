@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.dirac;
+package com.xiaomi.parts.dirac;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;

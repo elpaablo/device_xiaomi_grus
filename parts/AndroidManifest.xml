@@ -65,7 +65,7 @@
             android:name=".doze.DozeSettingsActivity"
             android:label="@string/ambient_display_title">
             <intent-filter>
-                <action android:name="com.custom.ambient.display.DOZE_SETTINGS" />
+                <action android:name="com.xiaomi.parts.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

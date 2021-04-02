@@ -15,7 +15,7 @@
  * limitations under the License.
  */
 
-package org.lineageos.settings.doze;
+package com.xiaomi.parts.doze;
 
 import android.content.Context;
 import android.hardware.Sensor;
