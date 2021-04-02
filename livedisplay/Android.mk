@@ -24,13 +24,13 @@ LOCAL_REQUIRED_MODULES := privapp-permissions-livedisplay.xml
 
 LOCAL_SRC_FILES := \
     SunlightEnhancement.cpp \
-    ColorEnhancement.cpp \
     DisplayModes.cpp \
     DisplayModesSDM.cpp \
     PictureAdjustment.cpp \
     SDMController.cpp \
     Utils.cpp \
     service.cpp \
+#    ColorEnhancement.cpp \
 #    AdaptiveBacklight.cpp \
 
 LOCAL_SHARED_LIBRARIES := \

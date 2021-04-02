@@ -37,12 +37,12 @@ using android::hardware::joinRpcThreadpool;
 
 using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
 //using ::vendor::lineage::livedisplay::V2_0::IAdaptiveBacklight;
-using ::vendor::lineage::livedisplay::V2_0::IColorEnhancement;
+//using ::vendor::lineage::livedisplay::V2_0::IColorEnhancement;
 using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment;
 using ::vendor::lineage::livedisplay::V2_0::implementation::SunlightEnhancement;
 //using ::vendor::lineage::livedisplay::V2_0::implementation::AdaptiveBacklight;
-using ::vendor::lineage::livedisplay::V2_0::implementation::ColorEnhancement;
+//using ::vendor::lineage::livedisplay::V2_0::implementation::ColorEnhancement;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModesSDM;
 using ::vendor::lineage::livedisplay::V2_0::implementation::PictureAdjustment;
@@ -58,7 +58,7 @@ int main() {
 
     // HIDL frontend
 //    sp<AdaptiveBacklight> ab;
-    sp<ColorEnhancement> ce;
+//    sp<ColorEnhancement> ce;
     sp<DisplayModes> dm;
     sp<DisplayModesSDM> dms;
     sp<PictureAdjustment> pa;
@@ -107,7 +107,6 @@ int main() {
             << "Can not create an instance of LiveDisplay HAL AdaptiveBacklight Iface, exiting.";
         goto shutdown;
     }
-*/
 
     ce = new ColorEnhancement();
     if (ce == nullptr) {
@@ -115,6 +114,7 @@ int main() {
             << "Can not create an instance of LiveDisplay HAL ColorEnhancement Iface, exiting.";
         goto shutdown;
     }
+*/
 
     dm = new DisplayModes();
     if (dm == nullptr) {
@@ -150,7 +150,7 @@ int main() {
             goto shutdown;
         }
     }
-*/
+
     if (ce->isSupported()) {
         status = ce->registerAsService();
         if (status != OK) {
@@ -159,6 +159,7 @@ int main() {
             goto shutdown;
         }
     }
+*/
 
     // fallback to SDM impl if kernel display modes isn't supported
     if (dm->isSupported()) {
