@@ -9,7 +9,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
-    persist.bluetooth.bluetooth_audio_hal.disabled=true \
+    persist.bluetooth.bluetooth_audio_hal.disabled=false \
     persist.bluetooth.a2dp_offload.disabled=true
 
 # Camera
@@ -19,7 +19,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.eis.enable=1 \
     persist.camera.facepp.fdenable=0 \
     persist.camera.dualcal.state=1 \
-    vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.GoogleCamera.Burial11
+    vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.GoogleCamera.Burial11 \
+    persist.vendor.camera.privapp.list=com.android.camera,com.android.camera2, \
+    persist.vendor.camera.preview.ubwc=0 \
+
     
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -41,7 +44,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.display.type=oled \
     persist.debug.force_burn_in=true \
     persist.sys.sf.native_mode=0 \
-    persist.sys.sf.color_saturation=1.3 \
+    persist.sys.sf.color_saturation=1.2 \
     vendor.display.enable_default_color_mode=1 \
     vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372
 

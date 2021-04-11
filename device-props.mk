@@ -1,3 +1,8 @@
+# Bluetooth
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.bluetooth.emb_wp_mode=false \
+	ro.bluetooth.wipower=false
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.cfa.thres.front=0 \
@@ -11,7 +16,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.camera.enableAdvanceFeatures=0x3E7 \
     persist.vendor.camera.multicam.framesync=1 \
     persist.vendor.camera.multicam=TRUE
-
+    
 # Google Assistant
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.opa.eligible_device=true
@@ -88,7 +93,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	vendor.perf.gestureflingboost.enable=true \
 	sys.displayfeature_hidl=true \
 	sys.displayfeature.hbm.enable=true \
-	vendor.display.enable_default_color_mode=1 \
+	vendor.display.enable_default_color_mode=0 \
 	ro.vendor.qti.sys.fw.bservice_limit=5 \
 	ro.vendor.qti.sys.fw.bservice_age=5000 \
 	ro.cutoff_voltage_mv=3400 \
@@ -102,8 +107,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	sys.qca1530=detect \
 	av.offload.enable=true \
 	persist.fuse_sdcard=true \
-	ro.bluetooth.emb_wp_mode=false \
-	ro.bluetooth.wipower=false \
 	ro.wlan.vendor=qcom \
 	ro.wlan.chip=39xx \
 	ro.wlan.mimo=1 \

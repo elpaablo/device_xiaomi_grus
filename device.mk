@@ -109,10 +109,10 @@ PRODUCT_PACKAGES += \
     android.hardware.audio.common@2.0-util \
     android.hardware.audio.common@6.0 \
     android.hardware.audio.common@6.0-util \
-    android.hardware.bluetooth.audio@2.0-impl \
-    android.hardware.soundtrigger@2.2-impl \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
+    android.hardware.bluetooth.audio@2.0-impl:32 \
+    android.hardware.soundtrigger@2.2-impl \
     audio.bluetooth.default \
     audio.a2dp.default \
     audio.r_submix.default \
@@ -129,6 +129,7 @@ PRODUCT_PACKAGES += \
     libqcompostprocbundle \
     libtinycompress \
     tinymix
+
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
@@ -161,32 +162,32 @@ PRODUCT_COPY_FILES += \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
 
+
 # Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
     libldacBT_abr \
     hwaddrs \
     libbt-vendor \
     libbtconfigstore \
-    vendor.qti.hardware.btconfigstore@1.0.vendor \
+    vendor.qti.hardware.btconfigstore@1.0.vendor
+
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
+    $(LOCAL_PATH)/configs/bt/bt_stack.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_stack.conf \
 
 # Camera
 PRODUCT_PACKAGES += \
-    android.hardware.camera.device@3.5 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.5 \
+    libxml2 \
     libdng_sdk.vendor \
-    vendor.qti.hardware.camera.device@3.2.vendor \
-#    libmedia_jni_shim \
-#    camera.shim
+    camera.shim \
+    vendor.qti.hardware.camera.device@1.0 \
+#    vendor.qti.hardware.camera.device@1.0.vendor \
 
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(DEVICE_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
-    $(DEVICE_PATH)/configs/component-overrides-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
 
 # CODEC 2
 PRODUCT_PACKAGES += \
@@ -194,10 +195,6 @@ PRODUCT_PACKAGES += \
     libcodec2_hidl@1.0.vendor \
     libavservices_minijail_vendor
 
-# Component overrides
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
-    $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/component-overrides.xml
 
 # Consumer IR
 PRODUCT_PACKAGES += \
@@ -574,15 +571,10 @@ PRODUCT_PACKAGES += \
     SimpleGalleryPro \
     OPScreenRecorder \
 	nextcloud \
-	mgc \
-	XiaomiParts
 
 # Custom init services
 PRODUCT_PACKAGES += \
     dcim_observer \
 
-# ANXCamera
-PRODUCT_PACKAGES += \
-    GrusMiuiCameraOverlay
-
+# MiUI Camera
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)

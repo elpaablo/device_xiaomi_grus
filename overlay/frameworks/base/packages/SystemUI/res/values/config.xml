@@ -52,7 +52,25 @@
     <integer name="quick_settings_num_columns">6</integer>
     
     <string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string>
-
+    
+    <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
+               to brightness values; -1 means keeping the current brightness. -->
+    <integer-array name="config_doze_brightness_sensor_to_brightness">
+        <item>-1</item> <!-- 0: OFF -->
+        <item>2</item> <!-- 1: NIGHT -->
+        <item>2</item> <!-- 2: LOW -->
+        <item>2</item> <!-- 3: HIGH -->
+        <item>2</item> <!-- 4: SUN -->
+    </integer-array>
+    
+    <array name="config_doze_brightness_sensor_to_scrim_opacity">
+        <item>@null</item>
+        <item>@null</item>
+        <item>@null</item>
+        <item>253</item>
+        <item>@null</item>
+        <item>127</item>
+    </array>
     
     <!-- Launcher package name for overlaying icons. -->
     <string name="launcher_overlayable_package" translatable="false">com.android.launcher3</string>

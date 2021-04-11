@@ -124,6 +124,10 @@ on boot
 
     # FPS info
     chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps
+    
+    # CPU info
+    chown system system /sys/class/thermal/thermal_zone13/type
+    chown system system /sys/class/thermal/thermal_zone13/temp
 
     # kcal
     chown system system /sys/module/msm_drm/parameters/kcal_cont
@@ -241,18 +245,18 @@ on charger
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
     write /sys/module/lpm_levels/system/system-pc/idle_enabled 0
     write /sys/devices/system/cpu/cpu0/online 1
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "userspace"
+#    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor "userspace"
     write /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 633600
     write /sys/devices/system/cpu/cpu1/online 1
     write /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor "userspace"
-    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 633600
+#    write /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq 633600
     write /sys/devices/system/cpu/cpu2/online 0
     write /sys/devices/system/cpu/cpu3/online 0
     write /sys/devices/system/cpu/cpu4/online 0
     write /sys/devices/system/cpu/cpu5/online 0
     write /sys/devices/system/cpu/cpu6/online 0
     write /sys/devices/system/cpu/cpu7/online 0
-    write /sys/module/msm_thermal/parameters/enabled "N"
+#    write /sys/module/msm_thermal/parameters/enabled "N"
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev barrier=1
     start vendor.hvdcp_opti
     setprop sys.usb.configfs 1

@@ -17,7 +17,8 @@
 -->
 <resources>
     <!-- System info -->
-    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone5/temp</string>
+    <!-- thermal_zone13 = cpuss-0-usr -->
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone13/temp</string>
     <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
     <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
     <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
