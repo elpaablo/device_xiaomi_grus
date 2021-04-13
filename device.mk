@@ -117,26 +117,29 @@ PRODUCT_PACKAGES += \
     audio.a2dp.default \
     audio.r_submix.default \
     audio.usb.default \
+    audiod \
+    liba2dpoffload \
     libaudioroute \
+    libaudio-resampler \
+    libbatterylistener \
+    libcomprcapture \
+    libexthwplugin \
     libhdmiedid \
     libhfp \
-    audiod \
-    libaudio-resampler \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
+    libsndmonitor \
+    libspkrprot \
     libvolumelistener \
-    libqcompostprocbundle \
     libtinycompress \
     tinymix
 
-
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_effects.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_effects.xml \
     $(LOCAL_PATH)/audio/audio_platform_info_intcodec.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_intcodec.xml \
     $(LOCAL_PATH)/audio/audio_platform_info_i2s.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info_i2s.xml \
-    $(LOCAL_PATH)/audio/audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_configuration.xml \
-    $(LOCAL_PATH)/audio/etc_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio/audio_policy_configuration.xml \
     $(LOCAL_PATH)/audio/audio_tuning_mixer.txt:$(TARGET_COPY_OUT_VENDOR)/etc/audio_tuning_mixer.txt \
     $(LOCAL_PATH)/audio/graphite_ipc_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/graphite_ipc_platform_info.xml \
     $(LOCAL_PATH)/audio/listen_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/listen_platform_info.xml \
@@ -155,13 +158,12 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/mixer_paths_mtp.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths_mtp.xml
 
 PRODUCT_COPY_FILES += \
-    frameworks/av/services/audiopolicy/config/a2dp_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_audio_policy_configuration.xml \
+    frameworks/av/services/audiopolicy/config/a2dp_in_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/a2dp_in_audio_policy_configuration.xml \
     frameworks/av/services/audiopolicy/config/audio_policy_volumes.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_policy_volumes.xml \
     frameworks/av/services/audiopolicy/config/bluetooth_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/bluetooth_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
     frameworks/av/services/audiopolicy/config/r_submix_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/r_submix_audio_policy_configuration.xml \
-    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml
-
+    frameworks/av/services/audiopolicy/config/usb_audio_policy_configuration.xml:$(TARGET_COPY_OUT_VENDOR)/etc/usb_audio_policy_configuration.xml 
+#    frameworks/av/services/audiopolicy/config/default_volume_tables.xml:$(TARGET_COPY_OUT_VENDOR)/etc/default_volume_tables.xml \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
@@ -175,19 +177,20 @@ PRODUCT_PACKAGES += \
 
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
-    $(LOCAL_PATH)/configs/bt/bt_stack.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_stack.conf \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml 
+#    $(LOCAL_PATH)/configs/bt/bt_stack.conf:$(TARGET_COPY_OUT_SYSTEM)/etc/bluetooth/bt_stack.conf \
 
 # Camera
 PRODUCT_PACKAGES += \
+    android.hardware.camera.device@3.5 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    libxml2 \
+    android.hardware.camera.provider@2.5 \
     libdng_sdk.vendor \
-    camera.shim \
-    vendor.qti.hardware.camera.device@1.0 \
-#    vendor.qti.hardware.camera.device@1.0.vendor \
-
+	vendor.qti.hardware.camera.device@1.0 \
+	vendor.qti.hardware.camera.device@1.0.vendor \
+    vendor.qti.hardware.camera.device@3.2.vendor
+#    camera.shim
 
 # CODEC 2
 PRODUCT_PACKAGES += \
@@ -571,10 +574,14 @@ PRODUCT_PACKAGES += \
     SimpleGalleryPro \
     OPScreenRecorder \
 	nextcloud \
+	ThermalProfiles
 
 # Custom init services
 PRODUCT_PACKAGES += \
     dcim_observer \
 
 # MiUI Camera
-$(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+ifeq ($(TARGET_INCLUDE_MIUI_CAMERA), true)
+    $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+endif
+

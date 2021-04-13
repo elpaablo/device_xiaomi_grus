@@ -25,7 +25,7 @@
     <integer name="config_fingerprintSensorLocation">1</integer>
 
     <!-- Device specific doze package -->
-    <string name="config_customDozePackage" translatable="false">com.xiaomi.parts/.doze.DozeSettingsActivity</string>
+    <string name="config_customDozePackage" translatable="false">com.custom.ambient.display/.DozeSettings</string>
 
     <!-- Whether to show or hide sensitive info (like IMEI and Phone Number) on About phone -->
     <bool name="configShowDeviceSensitiveInfo">false</bool>

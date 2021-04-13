@@ -25,10 +25,10 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9 SE
 PRODUCT_MANUFACTURER := Xiaomi
 
-BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys \
+BUILD_FINGERPRINT := "google/redfin/redfin:11/RQ2A.210405.005/7181113:user/release-keys"
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="redfin-user 11 RQ2A.210305.006 7119741 release-keys" \
+    PRIVATE_BUILD_DESC="redfin-user 11 RQ2A.210405.005 7181113 release-keys" \
     PRODUCT_NAME="grus" \
     TARGET_DEVICE="grus"
 
@@ -36,16 +36,18 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 EXTENDED_BUILD_TYPE := VANILLA
 WITH_GAPPS := false
+TARGET_INCLUDE_EXTRA_GAPPS : = false
 TARGET_SUPPORTS_GOOGLE_RECORDER := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_INCLUDE_STOCK_ARCORE := true
 USE_PIXEL_CHARGER_IMAGES := true
+TARGET_INCLUDE_MIUI_CAMERA := true
 
 PRODUCT_ENFORCE_VINTF_MANIFEST := false
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.build.fingerprint=google/redfin/redfin:11/RQ2A.210305.006/7119741:user/release-keys \
-    ro.build.description=redfin-user 11 RQ2A.210305.006 7119741 release-keys
+    ro.build.fingerprint=$(BUILD_FINGERPRINT) \
+    ro.build.description=$(PRIVATE_BUILD_DESC)
 
 
 PRODUCT_PROPERTY_OVERRIDES += \

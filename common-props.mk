@@ -10,8 +10,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee \
     persist.bluetooth.bluetooth_audio_hal.disabled=false \
-    persist.bluetooth.a2dp_offload.disabled=true
-
+    persist.bluetooth.a2dp_offload.disabled=true \
+    persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac \
+    persist.vendor.bt.aac_frm_ctl.enabled=true \
+    
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_zsl_mode=true \
@@ -22,7 +24,34 @@ PRODUCT_PROPERTY_OVERRIDES += \
     vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,com.GoogleCamera.Burial11 \
     persist.vendor.camera.privapp.list=com.android.camera,com.android.camera2, \
     persist.vendor.camera.preview.ubwc=0 \
-
+    persist.vendor.camera.isp.clock.optmz=0 \
+    persist.vendor.camera.isp.turbo=1 \
+    persist.vendor.camera.imglib.usefdlite=1 \
+    persist.vendor.camera.expose.aux=1 \
+    persist.vendor.camera.mpo.disabled=1 \
+    persist.vendor.camera.manufacturer=Xiaomi \
+    persist.vendor.camera.stats.test=0 \
+    persist.vendor.camera.awb.sync=2 \
+    persist.vendor.camera.af.sync=2 \
+    persist.vendor.camera.is_type=4 \
+    persist.vendor.camera.is_type_preview=4 \
+    persist.vendor.camera.gyro.disable=0 \
+    persist.vendor.camera.llnoise=1 \
+    persist.vendor.camera.tnr.preview=1 \
+    persist.vendor.camera.swtnr.preview=1 \
+    persist.vendor.camera.tnr.video=1 \
+    persist.vendor.camera.aec.sync=1 \
+    persist.vendor.camera.instant.aec=1 \
+    persist.vendor.camera.ae.instant.bound=20 \
+    persist.vendor.camera.depurple=1 \
+    persist.vendor.denoise.process.plates=2 \
+    persist.vendor.dualcam.lpm.enable=0 \
+    persist.vendor.tnr.process.plates=2 \
+    vendor.camera.not.cts.apk=1 \
+    vendor.camera.not.ctsverify.apk=1 \
+    vendor.camera.vidhance.eis.enabled=1 \
+    vendor.camera.vidhanceEis.force=1 \
+    vendor.vidhance.video.enabled=1
     
 # CNE and DPM
 PRODUCT_PROPERTY_OVERRIDES += \
