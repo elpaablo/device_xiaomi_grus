@@ -1,0 +1,16 @@
+type thermal_profiles_app, domain;
+
+app_domain(thermal_profiles_app)
+
+# Allow reading and writing shared prefs
+allow thermal_profiles_app system_app_data_file:dir create_dir_perms;
+allow thermal_profiles_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+# Allow binder communication with gpuservice
+binder_call(thermal_profiles_app, gpuservice)
+
+# Allow thermal_profiles to read and write to cgroup
+allow thermal_profiles_app cgroup:file rw_file_perms;
+
+# Allow thermal_profiles to write to sysfs_thermal
+allow thermal_profiles_app sysfs_thermal:file w_file_perms;
