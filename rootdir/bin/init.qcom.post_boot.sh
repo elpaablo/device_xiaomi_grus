@@ -70,29 +70,6 @@ echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 # Set Memory parameters
 # configure_memory_parameters
 
-# Enable bus-dcvs
-for cpubw in /sys/class/devfreq/*qcom,cpubw*
-do
-    echo "bw_hwmon" > $cpubw/governor
-    echo 50 > $cpubw/polling_interval
-    echo "1144 1720 2086 2929 3879 5931 6881" > $cpubw/bw_hwmon/mbps_zones
-    echo 4 > $cpubw/bw_hwmon/sample_ms
-    echo 68 > $cpubw/bw_hwmon/io_percent
-    echo 20 > $cpubw/bw_hwmon/hist_memory
-    echo 0 > $cpubw/bw_hwmon/hyst_length
-    echo 80 > $cpubw/bw_hwmon/down_thres
-    echo 0 > $cpubw/bw_hwmon/guard_band_mbps
-    echo 250 > $cpubw/bw_hwmon/up_scale
-    echo 1600 > $cpubw/bw_hwmon/idle_mbps
-done
-
-#Enable mem_latency governor for DDR scaling
-for memlat in /sys/class/devfreq/*qcom,memlat-cpu*
-do
-    echo "mem_latency" > $memlat/governor
-    echo 10 > $memlat/polling_interval
-    echo 400 > $memlat/mem_latency/ratio_ceil
-done
 
 #Enable mem_latency governor for L3 scaling
 for memlat in /sys/class/devfreq/*qcom,l3-cpu*
@@ -110,16 +87,6 @@ do
 done
 
 echo "cpufreq" > /sys/class/devfreq/soc:qcom,mincpubw/governor
-
-# Disable CPU Retention
-echo N > /sys/module/lpm_levels/L3/cpu0/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu1/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu2/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu3/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu4/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu5/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu6/ret/idle_enabled
-echo N > /sys/module/lpm_levels/L3/cpu7/ret/idle_enabled
 
 # Turn off scheduler boost at the end
 echo 0 > /proc/sys/kernel/sched_boost
@@ -141,9 +108,9 @@ write /proc/sys/vm/dirty_background_ratio 8
 write /proc/sys/vm/page-cluster 0
 
 # Reset default thermal config
-chmod 644 /sys/class/thermal/thermal_message/sconfig
-write /sys/class/thermal/thermal_message/sconfig 16
-chmod 444 /sys/class/thermal/thermal_message/sconfig
+#chmod 664 /sys/class/thermal/thermal_message/sconfig
+#write /sys/class/thermal/thermal_message/sconfig 16
+#chmod 444 /sys/class/thermal/thermal_message/sconfig
 
 # Unify all blocks setup
 for i in /sys/block/*/queue; do
