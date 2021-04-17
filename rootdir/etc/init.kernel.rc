@@ -14,14 +14,13 @@ on boot
     chmod 755 /system/vendor/bin/kernel_profiles_helper
 
 # Boots much faster when performance mode is enabled on boot
-on property:init.svc.bootanim=running
-    # Switch to NOOP and performance mode while booting
-    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor performance
-    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor performance
-    write /sys/block/sda/queue/scheduler noop
-    write /sys/block/sda/queue/read_ahead_kb 1024
-    write /sys/block/sde/queue/scheduler noop
-    write /sys/block/sde/queue/read_ahead_kb 1024
+#on property:init.svc.bootanim=running
+#    write /sys/devices/system/cpu/cpufreq/policy0/scaling_governor performance
+#    write /sys/devices/system/cpu/cpufreq/policy6/scaling_governor performance
+#    write /sys/block/sda/queue/scheduler noop
+#    write /sys/block/sda/queue/read_ahead_kb 1024
+#    write /sys/block/sde/queue/scheduler noop
+#    write /sys/block/sde/queue/read_ahead_kb 1024
 
 # Stock values (loaded when kernel profiles are disabled)
 on property:sys.kernel.profile=0
