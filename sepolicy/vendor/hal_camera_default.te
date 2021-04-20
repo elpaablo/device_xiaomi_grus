@@ -9,12 +9,17 @@ allow hal_camera_default sysfs_leds:dir r_dir_perms;
 allow hal_camera_default sysfs_leds:file rw_file_perms;
 allow hal_camera_default sysfs_leds:lnk_file read;
 
-r_dir_file(hal_camera_default, persist_camera_file)
 allow hal_camera_default hal_configstore_default:binder call;
-allow hal_camera_default camera_persist_file:file r_file_perms;
-allow hal_camera_default camera_persist_file:dir r_dir_perms;
-allow hal_camera_default mnt_vendor_file:file r_file_perms;
-allow hal_camera_default mnt_vendor_file:dir r_dir_perms;
 
-get_prop(hal_camera_default, vendor_camera_prop)
-set_prop(hal_camera_default, vendor_camera_prop)
+allow hal_camera_default sysfs_thermal:file w_file_perms;
+
+r_dir_file(hal_camera_default, persist_camera_file)
+
+get_prop(hal_camera_default, camera_ro_prop)
+
+userdebug_or_eng(`
+  get_prop(hal_camera_default, camera_dbg_prop)
+  get_prop(hal_camera_default, sensors_dbg_prop)
+')
+
+dontaudit hal_camera_default property_type:file { getattr open };

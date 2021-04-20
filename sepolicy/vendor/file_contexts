@@ -2,6 +2,10 @@
 /dev/elliptic(.*)?                            u:object_r:sound_device:s0
 /sys/class 									  u:object_r:sysfs:s0
 
+# Battery
+/sys/class/qcom-battery/restricted_current                                u:object_r:sysfs_wireless_supply:s0
+/sys/class/qcom-battery/restricted_charging                               u:object_r:sysfs_wireless_supply:s0   
+
 # Camera
 /(vendor|system/vendor)/bin/remosaic_daemon   u:object_r:remosaic_daemon_exec:s0
 
@@ -19,19 +23,11 @@
 /(vendor|system/vendor)/bin/mlipayd@1\.1         u:object_r:hal_mlipay_default_exec:s0
 /(vendor|system/vendor)/bin/mtd@1\.2             u:object_r:hal_mtdservice_default_exec:s0
 /(vendor|system/vendor)/bin/nv_mac               u:object_r:wcnss_service_exec:s0
+
 # Fingerprint devices
 /dev/goodix_fp                                u:object_r:fingerprint_device:s0
 /dev/vfsspi                                   u:object_r:fingerprint_device:s0
 
-<<<<<<< HEAD
-=======
-# FPS Info
-/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps                       u:object_r:sysfs_fps:s0
-
-# Restricted charging
-
-
->>>>>>> 7ee72d553 (sepolicy: correct thermal profiles labeling and FOD sysnodee path)
 # GPS devices
 /dev/bbd_control                              u:object_r:gps_device:s0
 /dev/bbd_patch                                u:object_r:gps_device:s0
@@ -73,17 +69,9 @@
 /system/bin/hw/vendor\.lineage\.biometrics\.fingerprint\.inscreen@1.0-service\.xiaomi_grus                     u:object_r:hal_lineage_fod_sdm710_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi                               u:object_r:hal_lineage_livedisplay_qti_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.ir@1\.0-service\.xiaomi                                      u:object_r:hal_ir_default_exec:s0
-/vendor/bin/hw/android\.hardware\.power-service-qti                                                           u:object_r:hal_power_default_exec:s0
+ /vendor/bin/hw/android\.hardware\.power-service-qti                                                           u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock			                   u:object_r:hal_power_stats_default_exec:s0
-<<<<<<< HEAD
-<<<<<<< HEAD
 /vendor/bin/hw/vendor\.qti\.memory\.pasrmanager\@1\.0-service                                                  u:object_r:hal_pasrmanager_memory_qti_exec:s0
-=======
-/vendor/bin/hw/vendor\.qti\.memory\.pasrmanager\@1\.0-service                                           u:object_r:hal_pasrmanager_memory_qti_exec:s0
->>>>>>> 1cf235210 (sdm845-common: sepolicy: Add policy for new pasr hal)
-=======
-/vendor/bin/hw/vendor\.qti\.memory\.pasrmanager\@1\.0-service                                                  u:object_r:hal_pasrmanager_memory_qti_exec:s0
->>>>>>> 7ee72d553 (sepolicy: correct thermal profiles labeling and FOD sysnodee path)
 
 # Persist files
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0
@@ -92,6 +80,11 @@
 #PowerHal Stats
 /sys/bus/iio/devices							u:object_r:sysfs:s0
 /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-00/c440000.qcom,spmi:qcom,pm660@0:rradc@4500/iio:device0/name  u:object_r:sysfs:s0
+
+# Secure element
+/(vendor|system/vendor)/bin/hw/vendor\.qti\.secure_element@1\.1-service            u:object_r:hal_secure_element_default_exec:s0
+/data/vendor/secure_element(/.*)?                                   u:object_r:vendor_secure_element_vendor_data_file:s0
+
 
 # Symlinks in root directory
 /bt_firmware(/.*)?                            u:object_r:bt_firmware_file:s0

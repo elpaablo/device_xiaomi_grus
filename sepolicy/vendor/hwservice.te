@@ -1,12 +1,6 @@
 type hal_fingerprint_hwservice_xiaomi, hwservice_manager_type;
 type hal_mlipay_hwservice, hwservice_manager_type;
 type hal_mtdservice_hwservice, hwservice_manager_type;
-<<<<<<< HEAD
 type nxpese_hwservice, hwservice_manager_type;
 type nxpnfc_hwservice, hwservice_manager_type;
-=======
-type hal_nxpese_hwservice, hwservice_manager_type;
-type hal_nxpnfc_hwservice, hwservice_manager_type;
-
->>>>>>> 1cf235210 (sdm845-common: sepolicy: Add policy for new pasr hal)
 type hal_pasrmanager_memory_hwservice, hwservice_manager_type;

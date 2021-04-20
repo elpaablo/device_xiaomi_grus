@@ -1,0 +1,2 @@
+allow adsprpcd sysfs_graphics : dir {search open};
+allow adsprpcd sysfs_graphics : file {read open getattr};

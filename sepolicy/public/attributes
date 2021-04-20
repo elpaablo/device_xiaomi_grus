@@ -1,4 +1,2 @@
-hal_attribute(mlipay)
-attribute hal_perf; 
-attribute hal_perf_client;
-attribute hal_perf_server;
+hal_attribute_lineage(mlipay)
+hal_attribute_lineage(mtdservice)

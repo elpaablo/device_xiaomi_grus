@@ -1,0 +1,2 @@
+allow bluetooth incremental_prop : file { read open getattr};
+allow bluetooth vendor_bluetooth_prop : file {read open};
