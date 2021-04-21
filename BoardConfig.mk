@@ -70,9 +70,8 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/grus
 TARGET_NO_KERNEL := false
 
-TARGET_KERNEL_CLANG_VERSION := r417554
-#TARGET_KERNEL_CLANG_VERSION := clang-13
-#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-13/bin
+#TARGET_KERNEL_CLANG_VERSION := r417554
+#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/clang-r417554/bin
 #TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-gnu-
 
 # APEX
@@ -262,7 +261,7 @@ include device/qcom/sepolicy_vndr/SEPolicy.mk
 #include device/qcom/sepolicy/SEPolicy.mk
 
 # Ignore SELinux neverallows
-#SELINUX_IGNORE_NEVERALLOWS := true
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # RIL
 PROTOBUF_SUPPORTED := true
