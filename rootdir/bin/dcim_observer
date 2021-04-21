@@ -1,4 +1,0 @@
-#!/system/bin/sh
-
-set -e
-/system/bin/inotifyd /system/bin/dcim_broadcaster /storage/emulated/0/DCIM/Camera:nd || true

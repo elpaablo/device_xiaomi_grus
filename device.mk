@@ -300,7 +300,6 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    init.safailnet.rc \
     init.recovery.qcom.rc \
     init.kernel.rc \
     ueventd.qcom.rc \
