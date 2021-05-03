@@ -27,14 +27,14 @@
 <mixer>
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
-    <ctl name="Voice Rx Device Mute" id="1" value="0" />
+    <ctl name="Voice Rx Device Mute" id="1" value="-1" />
     <ctl name="Voice Rx Device Mute" id="2" value="20" />
     <ctl name="Voice Tx Mute" id="0" value="0" />
-    <ctl name="Voice Tx Mute" id="1" value="0" />
+    <ctl name="Voice Tx Mute" id="1" value="-1" />
     <ctl name="Voice Tx Mute" id="2" value="500" />
     <ctl name="Voice Rx Gain" id="0" value="0" />
     <ctl name="Voice Rx Gain" id="1" value="-1" />
-    <ctl name="Voice Rx Gain" id="2" value="30" />
+    <ctl name="Voice Rx Gain" id="2" value="20" />
     <ctl name="Voip Tx Mute" id="0" value="0" />
     <ctl name="Voip Tx Mute" id="1" value="500" />
     <ctl name="Voip Rx Gain" id="0" value="0" />
@@ -42,7 +42,7 @@
     <ctl name="Voip Mode Config" value="12" />
     <ctl name="Voip Rate Config" value="0" />
     <ctl name="Voip Evrc Min Max Rate Config" id="0" value="1" />
-    <ctl name="Voip Evrc Min Max Rate Config" id="1" value="2" />
+    <ctl name="Voip Evrc Min Max Rate Config" id="1" value="4" />
     <ctl name="Voip Dtx Mode" value="0" />
     <ctl name="TTY Mode" value="OFF" />
     <ctl name="INT4_MI2S_RX Port Mixer INT3_MI2S_TX" value="0" />
@@ -323,18 +323,18 @@
     <ctl name="EAR PA Gain" value="POS_6_DB" />
     <ctl name="EAR PA Boost" value="DISABLE" />
 
-    <ctl name="RX1 Digital Volume" value="88" />
-    <ctl name="RX2 Digital Volume" value="88" />
-    <ctl name="RX3 Digital Volume" value="88" />
-    <ctl name="RX4 Digital Volume" value="88" />
-    <ctl name="RX5 Digital Volume" value="88" />
+    <ctl name="RX1 Digital Volume" value="84" />
+    <ctl name="RX2 Digital Volume" value="84" />
+    <ctl name="RX3 Digital Volume" value="84" />
+    <ctl name="RX4 Digital Volume" value="84" />
+    <ctl name="RX5 Digital Volume" value="84" />
     <ctl name="ADC1 Volume" value="4" />
     <ctl name="ADC2 Volume" value="4" />
     <ctl name="ADC3 Volume" value="4" />
-    <ctl name="DEC1 Volume" value="88" />
-    <ctl name="DEC2 Volume" value="88" />
-    <ctl name="DEC3 Volume" value="88" />
-    <ctl name="DEC4 Volume" value="88" />
+    <ctl name="DEC1 Volume" value="84" />
+    <ctl name="DEC2 Volume" value="84" />
+    <ctl name="DEC3 Volume" value="84" />
+    <ctl name="DEC4 Volume" value="84" />
 
     <!-- Compander controls -->
     <ctl name="COMP1 Switch" value="1" />
@@ -412,9 +412,9 @@
     <ctl name="Ultrasound Event" value="0" />
     <ctl name="Ultrasound Mode" value="0" />
     <ctl name="Ultrasound Suspend" value="0" />
-    <ctl name="Ultrasound Enable" value="0" />
-    <ctl name="Ultrasound Rx Port" value="0" />
-    <ctl name="Ultrasound RampDown" value="0" />
+    <ctl name="Ultrasound Enable" value="Off" />
+    <ctl name="Ultrasound Rx Port" value="Off" />
+    <ctl name="Ultrasound RampDown" value="Off" />
     <ctl name="Ultrasound Microphone Index" value="0" />
 
     <!-- Add the new path begin -->
@@ -565,7 +565,7 @@
         <ctl name="RX1 MIX1 INP1" value="IIR1" />
         <ctl name="EAR_S" value="Switch" />
         <ctl name="Loopback MCLK" value="ENABLE" />
-        <ctl name="DEC1 Volume" value="108" />
+        <ctl name="DEC1 Volume" value="110" />
         <ctl name="Interphone Switch" value="ENABLE" />
     </path>
 

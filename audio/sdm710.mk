@@ -107,6 +107,14 @@ vendor.audio.parser.ip.buffer.size=262144
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.flac.sw.decoder.24bit=true
 
+#split a2dp DSP supported encoder list
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.bt.a2dp_offload_cap=sbc-aptx-aptxhd-aac-ldac
+
+# Disable A2DP offload
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.bluetooth.a2dp_offload.disabled=true
+
 #enable software decoders for ALAC and APE
 PRODUCT_PROPERTY_OVERRIDES += \
 vendor.audio.use.sw.alac.decoder=true
@@ -143,6 +151,11 @@ vendor.audio.volume.headset.gain.depcal=true
 # TO CHECK
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.audio.fluence.voicecomm=true
+
+#enable AAC frame ctl for A2DP sinks
+# TO CHECK
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.vendor.bt.aac_frm_ctl.enabled=true
 
 #add dynamic feature flags here
 PRODUCT_PROPERTY_OVERRIDES += \

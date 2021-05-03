@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-/**
- * Copyright (c) 2009, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+/*
+** Copyright 2009, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License");
+** you may not use this file except in compliance with the License.
+** You may obtain a copy of the License at
+**
+**     http://www.apache.org/licenses/LICENSE-2.0
+**
+** Unless required by applicable law or agreed to in writing, software
+** distributed under the License is distributed on an "AS IS" BASIS,
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+** See the License for the specific language governing permissions and
+** limitations under the License.
+*/
 -->
 
 <!-- These resources are around just to allow their values to be customized
-     for different hardware and product builds.  Do not translate. -->
+     for different hardware and product builds.  Do not translate.
+
+     NOTE: The naming convention is "config_camelCaseValue". Some legacy
+     entries do not follow the convention, but all new entries should. -->
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- If this is true, the screen will come on when you unplug usb/power/whatever. -->
@@ -160,7 +163,7 @@
          This flag controls whether the {@link Display#FLAG_SUPPORTS_PROTECTED_BUFFERS}
          flag is set for wifi displays.
     -->
-    <bool name="config_wifiDisplaySupportsProtectedBuffers">true</bool>
+    <bool name="config_wifiDisplaySupportsProtectedBuffers">false</bool>
 
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
@@ -197,7 +200,7 @@
 
     <!-- If true, the doze component is not started until after the screen has been
          turned off and the screen off animation has been performed. -->
-    <bool name="config_dozeAfterScreenOffByDefault">true</bool>
+    <bool name="config_dozeAfterScreenOffByDefault">false</bool>
 
     <!-- Power Management: Specifies whether to decouple the interactive state of the
          device from the display on/off state.
@@ -370,49 +373,16 @@
     <integer name="config_brightness_ramp_rate_fast">2466</integer>
     <integer name="config_brightness_ramp_rate_slow">1973</integer>
 
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingMinimumFloat instead -->
-    <integer name="config_screenBrightnessSettingMinimum">1</integer>
-
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingMaximumFloat instead -->
-    <integer name="config_screenBrightnessSettingMaximum">255</integer>
-
-    <!-- Note: This setting is deprecated, please use
-    config_screenBrightnessSettingDefaultFloat instead -->
+    <!-- Default screen brightness setting.
+         Must be in the range specified by minimum and maximum. -->
     <integer name="config_screenBrightnessSettingDefault">90</integer>
 
-    <!-- Minimum screen brightness setting allowed by power manager.
-         -2 is invalid so setting will resort to int value specified above.
-         Set this to 0.0 to allow screen to go to minimal brightness.
-         The user is forbidden from setting the brightness below this level. -->
-    <item name="config_screenBrightnessSettingMinimumFloat" format="float" type="dimen">0.004</item>
-
-    <!-- Maximum screen brightness allowed by the power manager.
-         -2 is invalid so setting will resort to int value specified above.
-         Set this to 1.0 for maximum brightness range.
-         The user is forbidden from setting the brightness above this level. -->
-    <item name="config_screenBrightnessSettingMaximumFloat" format="float" type="dimen">1.0</item>
-
-    <!-- Default screen brightness setting set.
-         -2 is invalid so setting will resort to int value specified above.
-         Must be in the range specified by minimum and maximum. -->
-    <item name="config_screenBrightnessSettingDefaultFloat" format="float" type="dimen">0.35</item>
-
-    <!-- Screen brightness used to dim the screen while dozing in a very low power state.
-         May be less than the minimum allowed brightness setting
-         that can be set by the user. -->
-    <integer name="config_screenBrightnessDoze">2</integer>
-    <item name="config_screenBrightnessDozeFloat" format="float" type="dimen">0.008</item>
-
-     <!-- Screen brightness used to dim the screen when the user activity
+    <!-- Screen brightness used to dim the screen when the user activity
          timeout expires.  May be less than the minimum allowed brightness setting
          that can be set by the user. -->
     <integer name="config_screenBrightnessDim">10</integer>
-    <item name="config_screenBrightnessDimFloat" format="float" type="dimen">0.04</item>
-
-    <integer name="config_screenBrightnessDark">10</integer>
-
+    <integer name="config_screenBrightnessDark">2</integer>
+    <integer name="config_screenBrightnessDoze">2</integer>
     <bool name="config_allowAutoBrightnessWhileDozing">true</bool>
 
     <bool name="config_dozeAlwaysOnDisplayAvailable">true</bool>
@@ -423,9 +393,8 @@
     <!-- Light sensor event rate in milliseconds for automatic brightness control. -->
     <integer name="config_autoBrightnessLightSensorRate">250</integer>
 
-    <!--  Control whether to lock UI mode to what is selected from config_defaultUiModeType.
-          Once UI mode is locked, applications cannot change it anymore. -->
-    <bool name="config_lockUiMode">false</bool>
+    <!-- Enable Night display, which requires HWC 2.0. -->
+    <bool name="config_nightDisplayAvailable">true</bool>
 
     <!-- When the screen is turned on, the previous estimate of the ambient light level at the time
          the screen was turned off is restored and is used to determine the initial screen
@@ -1031,11 +1000,19 @@
         <item>90.0</item>
     </array>
 
-    <!-- The maximum range of gamma adjustment possible using the screen
-          auto-brightness adjustment setting. -->
-    <fraction name="config_autoBrightnessAdjustmentMaxGamma">100.0%</fraction>
+    <!-- Minimum screen brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness below this level. -->
+    <integer name="config_screenBrightnessSettingMinimum">1</integer>
 
-    <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
+    <!-- Maximum screen brightness setting allowed by the power manager.
+         The user is forbidden from setting the brightness above this level. -->
+    <integer name="config_screenBrightnessSettingMaximum">255</integer>
+
+     <!-- The maximum range of gamma adjustment possible using the screen
+          auto-brightness adjustment setting. -->
+     <fraction name="config_autoBrightnessAdjustmentMaxGamma">100.0%</fraction>
+
+     <!-- Power Management: Specifies whether to decouple the auto-suspend state of the
          device from the display on/off state.
          When false, autosuspend_disable() will be called before the display is turned on
          and autosuspend_enable() will be called after the display is turned off.
@@ -1076,6 +1053,9 @@
     <integer-array name="config_keyboardTapVibePattern">
         <item>5</item>
     </integer-array>
+    
+
+    
 
     <!-- Whether or not we should show vendor mismatch message -->
     <bool name="config_show_vendor_mismatch_message">false</bool>
@@ -1107,6 +1087,10 @@
          black in software (to avoid aliasing or emulate a cutout that is not physically existent).
         -->
     <bool name="config_fillMainBuiltInDisplayCutout">false</bool>
+    
+    <!-- If true, and there is a cutout on the main built in display, the cutout will be masked
+         by shrinking the display such that it does not overlap the cutout area. -->
+    <bool name="config_maskMainBuiltInDisplayCutout">false</bool>
 
     <bool name="config_setColorTransformAccelerated">true</bool>
     <bool name="config_enableAutoPowerModes">true</bool>
@@ -1119,13 +1103,20 @@
     <bool name="config_adaptive_sleep_available">false</bool>
     <bool name="config_ui_enableFadingMarquee">false</bool>
     <bool name="config_enableSmartPixels">true</bool>
-    <bool name="config_showScreenRecord">false</bool>
+    <bool name="config_showScreenRecord">true</bool>
     <bool name="config_ignoreRssnrSignalLevel">true</bool>
     <bool name="config_smartChargingAvailable">true</bool>
 
+    <!-- System info -->
+    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone13/temp</string>
+    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
+    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
+    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
+    <integer name="config_sysCPUTempMultiplier">1000</integer>
+    <integer name="config_sysBatteryTempMultiplier">10</integer>
     <bool name="config_hasVowifi">true</bool>
     <bool name="config_targetUsesInKernelDimming">false</bool>
-
+    
     <!-- List of biometric sensors on the device, in decreasing strength. Consumed by AuthService
          when registering authenticators with BiometricService. Format must be ID:Modality:Strength,
          where: IDs are unique per device, Modality as defined in BiometricAuthenticator.java,
@@ -1133,15 +1124,15 @@
     <string-array name="config_biometric_sensors" translatable="false" >
         <item>0:2:15</item>  <!-- ID0:Fingerprint:Strong -->
     </string-array>
-
-
+    
+    
      <!-- Class name of WallpaperManagerService. -->
     <string name="config_wallpaperManagerServiceName" translatable="false">com.android.server.wallpaper.WallpaperManagerService</string>
-
+     
     <!-- The name of the package that will hold the browser role by default. -->
-    <string name="config_defaultBrowser" translatable="false">com.kiwibrowser.kiwi</string>
+    <!--string name="config_defaultBrowser" translatable="false">com.kiwibrowser.kiwi</string-->
     <!-- The name of the package that will hold the dialer role by default. -->
-    <!--string name="config_defaultDialer" translatable="false">com.android.dialer</string-->
+    <string name="config_defaultDialer" translatable="false">com.android.dialer</string>
     <!-- The name of the package that will hold the SMS role by default. -->
     <string name="config_defaultSms" translatable="false">com.android.messaging</string>
     <!-- Whether the default emergency settings should be shown. -->
@@ -1153,69 +1144,48 @@
     <!-- The name of the package that will hold the call screening role by default. -->
     <string name="config_defaultCallScreening" translatable="false"></string>
     <!-- The name of the package that will hold the system gallery role. -->
-    <string name="config_systemGallery" translatable="false">com.google.android.apps.photos</string>
-
+    <!--string name="config_systemGallery" translatable="false">com.simplemobiletools.gallery.pro</string-->
+    
     <!-- default window inset isRound property -->
     <bool name="config_windowIsRound">true</bool>
-
+    
     <!-- Flag indicating whether round icons should be parsed from the application manifest. -->
     <bool name="config_useRoundIcon">true</bool>
-
+    
     <!-- Doze: should the TYPE_PICK_UP_GESTURE sensor be used as a pulse signal. -->
     <bool name="config_dozePulsePickup">false</bool>
-
+    
      <!-- Whether or not aware is enabled by default -->
     <bool name="config_awareSettingAvailable">false</bool>
-
+    
      <!-- If the sensor that wakes up the lock screen is available or not. -->
     <bool name="config_dozeWakeLockScreenSensorAvailable">false</bool>
 
-    <!-- Paths to the libraries that contain device specific key handlers -->
-    <string-array name="config_deviceKeyHandlerLibs" translatable="false">
-    </string-array>
-
-    <!-- Names of the key handler classes -->
-    <string-array name="config_deviceKeyHandlerClasses" translatable="false">
-    </string-array>
-
-     <!-- The list of vendor package signatures that should also be considered
-          platform signatures, specifically for use on devices with a vendor partition. -->
-     <string-array name="config_vendorPlatformSignatures">
-     </string-array>
-
-     <!-- Whether device has dash charging support -->
-    <bool name="config_hasDashCharger">false</bool>
-
-    <!-- Shows the required view for in-display fingerprint -->
-    <bool name="config_supportsInDisplayFingerprint">true</bool>
-
-    <!-- Default value for proximity check on screen wake
-         NOTE ! - Enable for devices that have a fast response proximity sensor (ideally < 300ms)
-    -->
-    <bool name="config_proximityCheckOnWake">false</bool>
-    <integer name="config_proximityCheckTimeout">250</integer>
-    <bool name="config_proximityCheckOnWakeEnabledByDefault">false</bool>
-
-    <!-- Button backlight -->
-    <dimen name="config_buttonBrightnessSettingDefaultFloat">1.0</dimen>
-    <bool name="config_deviceHasVariableButtonBrightness">false</bool>
-
     <!-- Flag indicating whether we should enable smart battery. -->
     <bool name="config_smart_battery_available">true</bool>
-
+    
     <!-- Component name of the default wallpaper. This will be ImageWallpaper if not
          specified -->
-    <string name="default_wallpaper_component" translatable="false">com.aospextended.customisation</string>
-
-    <!--  Control whether to lock day/night mode change from normal application. When it is
-          true, day / night mode change is only allowed to apps with MODIFY_DAY_NIGHT_MODE
-          permission. -->
-    <bool name="config_lockDayNightMode">false</bool>
-
-    <!-- Enable Night display, which requires HWC 2.0. -->
-    <bool name="config_nightDisplayAvailable">true</bool>
-
+    <string name="default_wallpaper_component" translatable="false">com.android.wallpaperpicker</string>
+    
     <!-- enable night mode by default -->
     <integer name="config_defaultNightMode">2</integer>
+    
+    <!-- Minimum velocity to initiate a fling, as measured in dips per second. -->
+    <dimen name="config_viewMinFlingVelocity">100dp</dimen>
+
+    <!-- Maximum velocity to initiate a fling, as measured in dips per second. -->
+    <dimen name="config_viewMaxFlingVelocity">12000dp</dimen>
+    
+    <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
+    we only enabled it while the device has ability of mixed color spaces composition -->
+    <bool name="config_enableWcgMode">true</bool>
+    
+    <integer-array name="config_availableColorModes">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </integer-array>
 
 </resources>

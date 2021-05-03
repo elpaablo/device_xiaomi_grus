@@ -1,7 +1,0 @@
-type restricted_charging_app, domain;
-
-app_domain(restricted_charging_app)
-
-# Allow restriced_charging to write to sysfs_wireless_supply
-allow restricted_charging_app sysfs_wireless_supply:file rw_file_perms;
-

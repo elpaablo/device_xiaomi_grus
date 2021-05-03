@@ -20,9 +20,19 @@
     <!-- Set the automatic brightness mode on by default -->
     <bool name="def_screen_brightness_automatic_mode">true</bool>
     
-     <!-- Default animation scale -->
+    <!-- Set double tap gesture disable by default to force user interaction to sync with d2ts on lockscreen -->
+    <bool name="def_double_tap_to_wake">false</bool>
+    
+    <!-- Default animation scale -->
     <fraction name="def_window_animation_scale">50%</fraction>
     <fraction name="def_window_transition_scale">50%</fraction>
         
     <bool name="def_mobile_data_always_on">false</bool>
+    
+    <!-- Default for Settings.Global.WIFI_SCAN_ALWAYS_AVAILABLE -->
+    <integer name="def_wifi_scan_always_available">0</integer>
+    
+     <!-- Notifications use ringer volume -->
+    <bool name="def_notifications_use_ring_volume">false</bool>
+    
 </resources>

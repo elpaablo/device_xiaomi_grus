@@ -33,7 +33,7 @@
     <bool name="config_supportBatteryHealth">true</bool>
     <bool name="config_showChargingCycles">false</bool> 
     
-     <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
+    <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
     <!--string name="config_wallpaper_picker_package" translatable="false">com.android.wallpaper</string-->
     <string name="config_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
 
@@ -41,7 +41,7 @@
     <string name="config_styles_and_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
 
     <!-- Settings suggestion package name -->
-    <!--string name="config_settingssuggestion_package_name" translatable="false">com.android.settings.intelligence</string-->
+    <string name="config_settingssuggestion_package_name" translatable="false">com.android.settings.intelligence</string>
     
     <!-- Display additional System Update menu if true -->
     <bool name="config_additional_system_update_setting_enable">false</bool>
@@ -50,4 +50,8 @@
     <!-- When true enable gesture setting. -->
     <bool name="config_gesture_settings_enabled">true</bool>
     
+    <!-- When true enable color temperature setting. -->
+    <bool name="config_enableColorTemperature">true</bool>
+
 </resources>
+

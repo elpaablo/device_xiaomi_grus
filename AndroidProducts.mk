@@ -14,8 +14,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/aosp_grus.mk
+	$(LOCAL_DIR)/arrow_grus.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_grus-userdebug 
+    arrow_grus-userdebug 
 

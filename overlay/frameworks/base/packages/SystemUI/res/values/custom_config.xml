@@ -13,7 +13,7 @@
  -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <!-- DozeSettings intent --> 
-    <string name="config_dozeSettingsIntent">com.custom.ambient.display.DOZE_SETTINGS</string>
-
+    <!-- FPSInfoService FPS node file path -->
+    <string name="config_fpsInfoSysNode" translatable="false">/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps</string>
+    
 </resources>

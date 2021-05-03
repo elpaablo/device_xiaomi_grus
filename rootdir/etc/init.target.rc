@@ -35,9 +35,20 @@ on early-init
     mkdir /bt_firmware 0771 system system
     mkdir /dsp 0771 media media
     symlink /data/tombstones /tombstones
-
+    
 on init
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
+
+# We need vold early for metadata encryption
+on early-fs
+    start vold
+    
+on late-fs
+    # Wait for keymaster
+    exec_start wait_for_keymaster
+
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
 
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
@@ -75,9 +86,6 @@ service sec_nvm /vendor/bin/sec_nvm
     user system
     group system
 
-on late-fs
-    mount_all /vendor/etc/fstab.qcom --late
-
 on post-fs-data
     mkdir /data/tombstones 0771 system system
     mkdir /tombstones/modem 0771 system system
@@ -93,6 +101,10 @@ on post-fs-data
     mkdir /data/vendor/charge_logger 0771 system system
     mkdir /data/vendor/misc/display 0771 system system
     chmod 666 /sys/class/drm/card0-DSI-1/disp_count
+    chown system system /sys/class/drm/card0-DSI-1/dim_alpha
+    chown system system /sys/class/drm/card0-DSI-1/fod_ui_ready
+    chown system system /sys/class/drm/card0-DSI-1/dim_layer_enable
+    chown system system /sys/class/drm/card0-DSI-1/dimlayer_hbm_enabled
 
     mkdir /data/vendor/nfc 0770 nfc nfc
 
@@ -114,6 +126,10 @@ on boot
     chown system system /sys/class/leds/white/brightness
     chown system system /sys/class/leds/white/blink
     chown system system /sys/class/drm/card0-DSI-1/disp_param
+    chown system system /sys/class/drm/card0-DSI-1/doze_backlight
+    chown system system /sys/class/touch/tp_dev/fod_status
+    chown system system /sys/class/backlight/panel0-backlight/brightness_clone
+    
 ####
     # vibrator
     chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv

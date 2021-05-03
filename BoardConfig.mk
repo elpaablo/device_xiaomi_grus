@@ -12,7 +12,6 @@ BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
 DEVICE_PATH := device/xiaomi/grus
 
 # Vendor Security Patch Level
-#VENDOR_SECURITY_PATCH := 2020-12-01
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Boot SPL
@@ -128,7 +127,7 @@ BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 QCOM_BT_USE_BTNV := true
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
-#TARGET_USE_QTI_BT_STACK := true
+TARGET_USE_QTI_BT_STACK := true
 
 # Camera
 #TARGET_USES_PREBUILT_CAMERA_SERVICE := true
@@ -258,7 +257,6 @@ BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 include device/qcom/sepolicy_vndr/SEPolicy.mk
-#include device/qcom/sepolicy/SEPolicy.mk
 
 # Ignore SELinux neverallows
 SELINUX_IGNORE_NEVERALLOWS := true

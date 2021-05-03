@@ -1,4 +1,1 @@
 binder_call(system_server, glgps)
-#allow system_server default_android_service : service_manager {add};
-#allow system_server default_android_hwservice : hwservice_manager {find};
-allow system_server sysfs_usb_supply:file { getattr open write };

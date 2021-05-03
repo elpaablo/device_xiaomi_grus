@@ -1,6 +1,0 @@
-# dcim_helper service
-type helper, domain;
-type helper_exec, exec_type, file_type;
-
-init_daemon_domain(helper)
-

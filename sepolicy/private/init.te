@@ -1,2 +1,0 @@
-#allow init system_file : file {execute_no_trans};
-allow init vendor_file:file execute;

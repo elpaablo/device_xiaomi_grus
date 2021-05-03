@@ -16,42 +16,25 @@
      limitations under the License.
 -->
 <resources>
-    <!-- System info -->
-    <!-- thermal_zone13 = cpuss-0-usr -->
-    <string name="config_sysCPUTemp">/sys/class/thermal/thermal_zone13/temp</string>
-    <string name="config_sysBatteryTemp">/sys/class/power_supply/battery/temp</string>
-    <string name="config_sysGPUFreq">/sys/kernel/gpu/gpu_clock</string>
-    <string name="config_sysGPULoad">/sys/kernel/gpu/gpu_busy</string>
-    <integer name="config_sysCPUTempMultiplier">1000</integer>
-    <integer name="config_sysBatteryTempMultiplier">10</integer>
-
-    <!-- Default values for LiveDisplay
+    <!-- Default values for LiveDisplay -->
     <integer name="config_dayColorTemperature">6500</integer>
     <integer name="config_nightColorTemperature">4800</integer>
     <integer name="config_outdoorAmbientLux">12000</integer>
-    <integer name="config_outdoorAmbientLuxHysteresis">1500</integer> -->
+    <integer name="config_outdoorAmbientLuxHysteresis">1500</integer>
     <integer name="config_defaultLiveDisplayMode">0</integer>
 
     <!-- These values should map to the true min and max
          that the backend is capable of adjusting to. This
          is more important when using the ColorBalance mode,
          as the discrete adjustment is interpolated between
-         this range (with config_dayColorTemperature at zero)
+         this range (with config_dayColorTemperature at zero) -->
     <integer name="config_minColorTemperature">1000</integer>
-    <integer name="config_maxColorTemperature">10000</integer> -->
+    <integer name="config_maxColorTemperature">10000</integer>
 
     <bool name="config_defaultAutoContrast">false</bool>
     <bool name="config_defaultAutoOutdoorMode">false</bool>
     <bool name="config_defaultColorEnhancement">false</bool>
     <bool name="config_defaultCABC">false</bool>
 
-    <!-- Default fod pressed color -->
-    <integer name="config_fod_pressed_color">1</integer>
-
-    <!-- Default value for FOD animation package resources -->
-    <string name="config_fodAnimationPackage" translatable="false">org.aospextended.fod.animations</string>
-
-    <!-- -1 means use same as config_screenBrightnessDoze -->
-    <integer name="config_screenBrightnessPulse">10</integer>
-
 </resources>
+

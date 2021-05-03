@@ -1,1 +1,1 @@
-allow vendor_hal_qteeconnector_qti hal_secure_element_default : binder {transfer};
+get_prop(vendor_hal_qteeconnector_qti, hwservicemanager_prop)
