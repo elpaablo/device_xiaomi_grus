@@ -28,17 +28,17 @@
     <!-- These are the initial mixer settings -->
     <ctl name="Voice Rx Device Mute" id="0" value="0" />
     <ctl name="Voice Rx Device Mute" id="1" value="-1" />
-    <ctl name="Voice Rx Device Mute" id="2" value="20" />
+    <ctl name="Voice Rx Device Mute" id="2" value="30" />
     <ctl name="Voice Tx Mute" id="0" value="0" />
     <ctl name="Voice Tx Mute" id="1" value="-1" />
-    <ctl name="Voice Tx Mute" id="2" value="500" />
+    <ctl name="Voice Tx Mute" id="2" value="620" />
     <ctl name="Voice Rx Gain" id="0" value="0" />
     <ctl name="Voice Rx Gain" id="1" value="-1" />
-    <ctl name="Voice Rx Gain" id="2" value="20" />
+    <ctl name="Voice Rx Gain" id="2" value="30" />
     <ctl name="Voip Tx Mute" id="0" value="0" />
-    <ctl name="Voip Tx Mute" id="1" value="500" />
+    <ctl name="Voip Tx Mute" id="1" value="620" />
     <ctl name="Voip Rx Gain" id="0" value="0" />
-    <ctl name="Voip Rx Gain" id="1" value="20" />
+    <ctl name="Voip Rx Gain" id="1" value="30" />
     <ctl name="Voip Mode Config" value="12" />
     <ctl name="Voip Rate Config" value="0" />
     <ctl name="Voip Evrc Min Max Rate Config" id="0" value="1" />
@@ -172,7 +172,8 @@
     <ctl name="INT5 MI2S VI MONO" value="Left" />
     <ctl name="HPHL" value="ZERO" />
     <ctl name="HPHR" value="ZERO" />
-    <ctl name="EAR_S" value="ZERO" />
+    <ctl name="EAR_S" value="RX0" />
+    <ctl name="EAR_S" value="RX4"/>
     <!-- HFP start -->
     <ctl name="HFP_SLIM7_UL_HL Switch" value="0" />
     <ctl name="INT4_MI2S_RX Port Mixer SLIM_7_TX" value="0" />
@@ -315,26 +316,26 @@
     <ctl name="SpkrRight WSA PA Gain" value="G_0_DB" />
     <ctl name="SpkrLeft WSA PA Mute" value="1" />
     <ctl name="SpkrRight WSA PA Mute" value="1" />
-    <ctl name="EAR SPKR PA Gain" value="G_DEFAULT" />
+    <ctl name="EAR SPKR PA Gain" value="G_8_DB" />
 
     <!-- Volume controls -->
-    <ctl name="HPHL Volume" value="9" />
-    <ctl name="HPHR Volume" value="9" />
+    <ctl name="HPHL Volume" value="10" />
+    <ctl name="HPHR Volume" value="10" />
     <ctl name="EAR PA Gain" value="POS_6_DB" />
-    <ctl name="EAR PA Boost" value="DISABLE" />
+    <ctl name="EAR PA Boost" value="1" />
 
-    <ctl name="RX1 Digital Volume" value="84" />
-    <ctl name="RX2 Digital Volume" value="84" />
-    <ctl name="RX3 Digital Volume" value="84" />
-    <ctl name="RX4 Digital Volume" value="84" />
-    <ctl name="RX5 Digital Volume" value="84" />
-    <ctl name="ADC1 Volume" value="4" />
-    <ctl name="ADC2 Volume" value="4" />
-    <ctl name="ADC3 Volume" value="4" />
-    <ctl name="DEC1 Volume" value="84" />
-    <ctl name="DEC2 Volume" value="84" />
-    <ctl name="DEC3 Volume" value="84" />
-    <ctl name="DEC4 Volume" value="84" />
+    <ctl name="RX1 Digital Volume" value="90" />
+    <ctl name="RX2 Digital Volume" value="90" />
+    <ctl name="RX3 Digital Volume" value="90" />
+    <ctl name="RX4 Digital Volume" value="90" />
+    <ctl name="RX5 Digital Volume" value="90" />
+    <ctl name="ADC1 Volume" value="8" />
+    <ctl name="ADC2 Volume" value="8" />
+    <ctl name="ADC3 Volume" value="8" />
+    <ctl name="DEC1 Volume" value="90" />
+    <ctl name="DEC2 Volume" value="90" />
+    <ctl name="DEC3 Volume" value="90" />
+    <ctl name="DEC4 Volume" value="90" />
 
     <!-- Compander controls -->
     <ctl name="COMP1 Switch" value="1" />
@@ -528,19 +529,19 @@
 
     <path name="ultrasound-secondary-input">
     </path>
- 
+
     <path name="ultrasound-rampdown">
         <ctl name="Ultrasound RampDown" value="On" />
     </path>
-    
+
     <path name="ultrasound-screen-on">
          <ctl name="Ultrasound Event" value="1" />
     </path>
-    
+
     <path name="ultrasound-on">
         <ctl name="Ultrasound Rx Port" value="On" />
     </path>
-    
+
     <path name="ultrasound-suspend">
         <ctl name="Ultrasound Suspend" value="1" />
     </path>
@@ -2205,7 +2206,7 @@
     </path>
 
     <path name="handset">
-        <ctl name="EAR SPKR PA Gain" value="G_3_DB" />
+        <ctl name="EAR SPKR PA Gain" value="G_8_DB" />
         <path name="speaker-mono" />
     </path>
 
