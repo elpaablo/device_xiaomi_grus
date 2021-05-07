@@ -17,7 +17,7 @@ on property:sys.boot_completed=1
     write /sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq 2304000
     write /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us 1000
     write /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 1000
-    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load 90
+    write /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load 85
 
     # gpu sysnodes
     write /sys/class/kgsl/kgsl-3d0/devfreq/governor msm-adreno-tz
@@ -26,4 +26,3 @@ on property:sys.boot_completed=1
 
     # schedtune
     write /dev/stune/top-app/schedtune.boost 1
-

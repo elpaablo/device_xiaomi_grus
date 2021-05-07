@@ -159,10 +159,6 @@ on boot
     chown system system /sys/class/qcom-battery/restricted_charging
     chmod 664 /sys/class/qcom-battery/restricted_current
     chmod 664 /sys/class/qcom-battery/restricted_charging
-
-    # dcim observer
-    chmod 755 /system/bin/dcim_observer
-    chmod 755 /system/bin/dcim_broadcaster
     
     # thermal
     chown system system /sys/class/thermal/thermal_message/sconfig
