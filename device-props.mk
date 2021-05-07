@@ -1,7 +1,7 @@
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.bluetooth.emb_wp_mode=false \
-	ro.bluetooth.wipower=false
+    ro.bluetooth.wipower=false
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -122,7 +122,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	mm.enable.smoothstreaming=true \
 	vendor.mm.enable.qcom_parser=13631487 \
 	persist.mm.enable.prefetch=true \
-	qcom.hw.aac.encoder=true \
+	qcom.hw.aac.encoder=false \
 	persist.radio.VT_CAM_INTERFACE=1 \
 	dev.pm.dyn_samplingrate=1 \
 	persist.sys.strictmode.disable=true \
