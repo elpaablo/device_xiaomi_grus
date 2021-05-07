@@ -560,6 +560,10 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Settings \
     Launcher3QuickStep \
+    
+# Dialer
+PRODUCT_PACKAGES += \
+    org.lineageos.lib.phone
 
 # Extras
 #PRODUCT_PACKAGES += \
