@@ -16,3 +16,9 @@ allow init hal_touchfeature_xiaomi_default_exec:file execute;
 allow init hal_dumpstate_impl_exec:file { execute };
 allow init hal_displayfeature_xiaomi_default_exec:file { execute };
 allow init adsprpcd_file:file mounton;
+allow init hal_nxpese_hwservice:hwservice_manager { find add };
+allow init hal_nxpnfc_hwservice:hwservice_manager { find };
+
+allow init socket_device:sock_file { unlink setattr create };
+
+dontaudit init { bt_firmware_file firmware_file }:filesystem getattr;
