@@ -289,6 +289,7 @@ PRODUCT_PACKAGES += \
 
 # Init scripts
 PRODUCT_PACKAGES += \
+    fstab.qcom \
     init.msm.usb.configfs.rc \
     init.qcom.rc \
     init.qcom.factory.rc \
@@ -296,15 +297,16 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
-    init.kernel.rc \
     ueventd.qcom.rc \
     init.qcom.early_boot.sh \
     init.qcom.post_boot.sh \
     init.qcom.sensors.sh \
     init.qcom.sh \
     init.qcom.usb.sh \
-    kernel_profiles_helper \
-    fstab.qcom
+    init.kernel.rc \
+    init.dcim.rc
+    
+#    kernel_profiles_helper \
 
 # Input
 PRODUCT_COPY_FILES += \
