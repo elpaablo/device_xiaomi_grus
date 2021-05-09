@@ -13,6 +13,6 @@ allow hal_mtdservice_default property_socket:sock_file write;
 allow hal_mtdservice_default teei_client_device:chr_file { read write open ioctl };
 allow hal_mtdservice_default init:unix_stream_socket connectto;
 allow hal_mtdservice_default persist_data_file:dir getattr;
-
 allow hal_mtdservice_default hal_mtdservice_hwservice:hwservice_manager { find add };
 
+set_prop(hal_mtdservice_default, vendor_tee_listener_prop)
