@@ -388,3 +388,8 @@ firmware_directories /vendor/firmware_mnt/image/
 /sys/class/graphics/fb0     modes                    0664    system  graphics
 /sys/class/graphics/fb0     mode                     0664    system  graphics
 /sys/class/graphics/fb0     msm_cmd_autorefresh_en   0664    system  graphics
+
+# Battery (restrited charging/current)
+/sys/class/qcom-battery/restricted_current 0664 system system
+/sys/class/qcom-battery/restricted_charging 0664 system system
+

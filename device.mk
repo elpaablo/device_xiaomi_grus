@@ -85,6 +85,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/permissions/com.custom.ambient.display.xml:system/etc/permissions/com.custom.ambient.display.xml \
+    $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-hotword.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
 
@@ -304,7 +305,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.kernel.rc \
-    init.dcim.rc
     
 #    kernel_profiles_helper \
 
@@ -568,9 +568,10 @@ PRODUCT_PACKAGES += \
     org.lineageos.lib.phone
 
 # Extras
-#PRODUCT_PACKAGES += \
+PRODUCT_PACKAGES += \
     SimTogglePlus \
-    mixplorer \
+
+#    mixplorer \
     kiwi \
     Remove \
     SimpleGalleryPro \
