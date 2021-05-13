@@ -1,0 +1,23 @@
+type simtoggleplus_app, domain;
+
+app_domain(simtoggleplus_app)
+
+# Allow reading and writing shared prefs
+allow simtoggleplus_app system_app_data_file:dir create_dir_perms;
+allow simtoggleplus_app system_app_data_file:{ file lnk_file } create_file_perms;
+
+# Allow access to standard system services
+allow simtoggleplus_app app_api_service:service_manager find;
+
+# Allow access to activity service
+allow simtoggleplus_app activity_service:service_manager find;
+
+# Allow access to radio service
+allow simtoggleplus_app radio_service:service_manager find;
+
+# Allow access to sysfs_battery_supply
+r_dir_file(simtoggleplus_app, sysfs_battery_supply)
+allow simtoggleplus_app sysfs_battery_supply:{ file lnk_file} { open write getattr };
+
+
+
