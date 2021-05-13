@@ -82,8 +82,6 @@ persist.sys.thermal.        u:object_r:thermal_engine_prop:s0
 ro.vendor.aware_available  u:object_r:vendor_aware_available_prop:s0
 vendor.fastrpc u:object_r:vendor_fastrpc_prop:s0
 
-#---------------------------------------------------#
-//TODO lable remaining properties
 
 #persist.vendor.debug.sensors.daemon
 

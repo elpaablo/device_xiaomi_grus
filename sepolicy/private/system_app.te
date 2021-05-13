@@ -1,4 +1,4 @@
 hal_client_domain(system_app, hal_mlipay)
 
 #selinux status
-allow system_app selinuxfs:file r_file_perms;
+allow system_app selinuxfs:file { read open };
