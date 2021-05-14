@@ -233,7 +233,7 @@ PRODUCT_PACKAGES += \
 
 # Display calibration
 PRODUCT_PACKAGES += \
-     vendor.lineage.livedisplay@2.0-service.xiaomi
+     vendor.lineage.livedisplay@2.0-service.xiaomi \
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -570,8 +570,7 @@ PRODUCT_PACKAGES += \
 # Extras
 PRODUCT_PACKAGES += \
     SimTogglePlus \
-
-#    mixplorer \
+    mixplorer \
     kiwi \
     Remove \
     SimpleGalleryPro \
