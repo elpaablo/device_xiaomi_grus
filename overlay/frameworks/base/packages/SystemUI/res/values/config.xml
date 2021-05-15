@@ -53,13 +53,13 @@
     
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-	wifi,cell,dataswitch,nfc,location,sound,flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
+	wifi,bt,cell,dataswitch,nfc,location,livedisplay,aod,cpuinfo,fpsinfo,kernelprofile,battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot	wifi,cell,dataswitch,nfc,location,sound,flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
     </string>
     
     <!-- The default tiles to display in QuickSettings -->
-    <!--string name="quick_settings_tiles_default" translatable="false">
-	wifi,custom(com.elpaablo.simtoggleplus/.Sim1TileService),custom(com.elpaablo.simtoggleplus/.Sim2TileService),bt,custom(com.elpaablo.simtoggleplus/.LTETileService),cell,custom(com.elpaablo.simtoggleplus/.ADBTileService),custom(com.elpaablo.simtoggleplus/.RCTileService),dataswitch,nfc,location,livedisplay,aod,cpuinfo,fpsinfo,kernelprofile,sound,custom(com.oneplus.screenrecord/.core.SystemUITileService),flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
-    </string-->
+    <string name="quick_settings_tiles_default" translatable="false">
+	wifi,custom(com.elpaablo.simtoggleplus/.Sim1TileService),custom(com.elpaablo.simtoggleplus/.Sim2TileService),bt,custom(com.elpaablo.simtoggleplus/.LTETileService),cell,custom(com.elpaablo.simtoggleplus/.ADBTileService),custom(com.elpaablo.simtoggleplus/.RCTileService),dataswitch,nfc,location,livedisplay,aod,cpuinfo,fpsinfo,kernelprofile,sound,custom(com.oneplus.screenrecord/.core.SystemUITileService),battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot
+    </string>
     
     <string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string>
 
