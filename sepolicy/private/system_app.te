@@ -4,6 +4,6 @@ hal_client_domain(system_app, hal_mlipay)
 allow system_app selinuxfs:file { read open };
 
 # adblocker
-set_prop(system_app, aicp_prop)
+allow system_app aicp_prop:property_service set;
 
 
