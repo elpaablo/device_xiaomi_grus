@@ -15,13 +15,6 @@
 -->
 <config>
     <component-override package="com.android.bluetooth" >
-    <bool name="profile_supported_hfpclient">false</bool>
-    <bool name="profile_supported_avrcp_controller">false</bool>
-    <bool name="profile_supported_a2dp_sink">false</bool>
-    <bool name="profile_supported_sap">true</bool>
-    <bool name="profile_supported_ba">true</bool>
-    <bool name="profile_supported_hid_device">true</bool>
-    <bool name="profile_supported_hid_host">true</bool>
-    <bool name="profile_supported_avrcp_target">true</bool>
+        <component class=".sap.SapService" enabled="true" />
     </component-override>
 </config>
