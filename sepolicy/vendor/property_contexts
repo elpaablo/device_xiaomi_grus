@@ -65,27 +65,24 @@ vendor.powerhal.lpm        u:object_r:vendor_power_prop:s0
 vendor.powerhal.init       u:object_r:vendor_power_prop:s0
 
 # RenderThread
-ro.vendor.globalpq.       u:object_r:render_prop:s0
-persist.vendor.dp.        u:object_r:render_prop:s0
-vendor.dp.                u:object_r:render_prop:s0
+ro.vendor.globalpq.        u:object_r:render_prop:s0
+persist.vendor.dp.         u:object_r:render_prop:s0
+vendor.dp.                 u:object_r:render_prop:s0
 
 # Sensors
 persist.sensor.            u:object_r:sensors_prop:s0
+persist.vendor.debug.      u:object_r:vendor_sensors_debug_prop:s0
 
 # Manufracturer
 ro.product.system.manufacturer          u:object_r:system_manufacturer_prop:s0
 
 # Thermal
-sys.thermal.               u:object_r:thermal_engine_prop:s0
+sys.thermal.                u:object_r:thermal_engine_prop:s0
 persist.sys.thermal.        u:object_r:thermal_engine_prop:s0
 
-ro.vendor.aware_available  u:object_r:vendor_aware_available_prop:s0
-vendor.fastrpc u:object_r:vendor_fastrpc_prop:s0
+ro.vendor.aware_available   u:object_r:vendor_aware_available_prop:s0
+vendor.fastrpc              u:object_r:vendor_fastrpc_prop:s0
 
-
-#persist.vendor.debug.sensors.daemon
-
-
-
-
+# Camera (temporary. waiting for framework to be updated to use packageexcludelist instead of packageblacklist)
+vendor.camera.aux.packageblacklist                          u:object_r:exported_default_prop:s0
 

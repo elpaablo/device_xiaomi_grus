@@ -162,7 +162,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
-    BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
     libldacBT_abr \
@@ -170,11 +169,12 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     libbtconfigstore \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
+    BluetoothResCommon \
 
 
 
 #PRODUCT_COPY_FILES += \
-#    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
+    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -232,7 +232,7 @@ PRODUCT_PACKAGES += \
     libsdm-disp-vndapis
 
 # Display calibration
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
      vendor.lineage.livedisplay@2.0-service.xiaomi \
 
 # DRM
@@ -305,7 +305,7 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.kernel.rc \
-    
+
 #    kernel_profiles_helper \
 
 # Input
@@ -570,6 +570,7 @@ PRODUCT_PACKAGES += \
 # Extras
 PRODUCT_PACKAGES += \
     SimTogglePlus \
+    ThermalProfiles
 
 #    mixplorer \
     kiwi \
@@ -577,7 +578,6 @@ PRODUCT_PACKAGES += \
     SimpleGalleryPro \
     OPScreenRecorder \
     nextcloud \
-    ThermalProfiles
 
 # MiUI Camera
 ifeq ($(TARGET_INCLUDE_MIUI_CAMERA), true)
