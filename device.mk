@@ -18,7 +18,7 @@ $(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
 # setup audio configs
 $(call inherit-product, $(LOCAL_PATH)/audio/sdm710.mk)
 
-# setupe dalvik vm properties
+# setup dalvik vm properties
 $(call inherit-product, $(LOCAL_PATH)/configs/phone-xhdpi-6144-dalvik-heap.mk)
 
 # Overlay
@@ -85,10 +85,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/qti_whitelist.xml:system/etc/sysconfig/qti_whitelist.xml \
     $(LOCAL_PATH)/permissions/privapp-permissions-qti.xml:system/etc/permissions/privapp-permissions-qti.xml \
     $(LOCAL_PATH)/permissions/com.custom.ambient.display.xml:system/etc/permissions/com.custom.ambient.display.xml \
-    $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-hotword.xml \
     frameworks/native/data/etc/android.hardware.bluetooth_le.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth_le.xml \
     frameworks/native/data/etc/android.hardware.bluetooth.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.bluetooth.xml \
 
+#    $(LOCAL_PATH)/permissions/privapp-permissions-hotword.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/privapp-permissions-hotword.xml \
+#    $(LOCAL_PATH)/permissions/hotword-hiddenapi-package-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/hotword-hiddenapi-package-whitelist.xml
+    
+    
 # AID/fs configs
 PRODUCT_PACKAGES += \
     fs_config_files
@@ -162,6 +165,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
     libldacBT_abr \
@@ -169,12 +173,9 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     libbtconfigstore \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    BluetoothResCommon \
-
-
 
 #PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/component-overrides.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
+#    $(LOCAL_PATH)/configs/component-overrides_qti.xml:$(TARGET_COPY_OUT_VENDOR)/etc/sysconfig/component-overrides.xml \
 
 # Camera
 PRODUCT_PACKAGES += \
@@ -562,17 +563,17 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     SystemUI \
     Settings \
     Launcher3QuickStep \
-    
+
 # Dialer
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     org.lineageos.lib.phone
 
 # Extras
 PRODUCT_PACKAGES += \
     SimTogglePlus \
-    ThermalProfiles
 
-#    mixplorer \
+#    ThermalProfiles \
+    mixplorer \
     kiwi \
     Remove \
     SimpleGalleryPro \

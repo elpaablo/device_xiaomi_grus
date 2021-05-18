@@ -43,4 +43,3 @@ type factor_prop, property_type;
 # Vendor sensors debug property
 type vendor_sensors_debug_prop, property_type;
 
-vendor_internal_prop(vendor_ctl_rild_prop);

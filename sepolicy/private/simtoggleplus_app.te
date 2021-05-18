@@ -18,6 +18,3 @@ allow simtoggleplus_app radio_service:service_manager find;
 # Allow access to sysfs_battery_supply
 r_dir_file(simtoggleplus_app, sysfs_battery_supply)
 allow simtoggleplus_app sysfs_battery_supply:{ file lnk_file} { open write getattr };
-
-
-

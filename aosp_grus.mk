@@ -13,13 +13,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
 # Inherit some common stuff
-$(call inherit-product, vendor/fluid/config/common_full_phone.mk)
+$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 # Inherit from land device
 $(call inherit-product, $(DEVICE_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := fluid_grus
+PRODUCT_NAME := aosp_grus
 PRODUCT_DEVICE := grus
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := MI 9 SE
@@ -32,13 +32,13 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
     PRODUCT_NAME="grus" \
     TARGET_DEVICE="grus"
 
-WITH_GAPPS := false
+WITH_GAPPS := true
 #TARGET_INCLUDE_EXTRA_GAPPS := false
-#TARGET_SUPPORTS_GOOGLE_RECORDER := false
-#TARGET_INCLUDE_LIVE_WALLPAPERS := false
-#TARGET_INCLUDE_STOCK_ARCORE := false
-#USE_PIXEL_CHARGER_IMAGES := false
-TARGET_INCLUDE_MIUI_CAMERA := true
+TARGET_SUPPORTS_GOOGLE_RECORDER := true
+TARGET_INCLUDE_LIVE_WALLPAPERS := true
+TARGET_INCLUDE_STOCK_ARCORE := true
+uSE_PIXEL_CHARGER_IMAGES := true
+TARGET_INCLUDE_MIUI_CAMERA := false
 
 PRODUCT_ENFORCE_VINTF_MANIFEST := false
 

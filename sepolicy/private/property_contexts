@@ -1,5 +1,8 @@
+# Adblocker
+persist.aicp.hosts_block       u:object_r:aicp_prop:s0
+
 # Global
-ro.build.flavor          u:object_r:exported_default_prop:s0
+ro.build.flavor                u:object_r:exported_default_prop:s0
 
 # IMEI
 persist.radio.imei             u:object_r:deviceid_prop:s0
@@ -15,5 +18,5 @@ ro.product.mod_device          u:object_r:exported2_default_prop:s0
 ro.product.system.manufacturer u:object_r:exported2_default_prop:s0 exact string
 ro.miui.                       u:object_r:exported_system_prop:s0
 
-# Adblocker
-persist.aicp.hosts_block       u:object_r:aicp_prop:s0
+# RIL
+#init.svc.ril-daemon            u:object_r:init_ril_prop:s0

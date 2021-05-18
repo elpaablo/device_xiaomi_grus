@@ -14,8 +14,8 @@
 # limitations under the License.
 
 PRODUCT_MAKEFILES := \
-	$(LOCAL_DIR)/fluid_grus.mk
+	$(LOCAL_DIR)/aosp_grus.mk
 
 COMMON_LUNCH_CHOICES := \
-    fluid_grus-userdebug 
+    aosp_grus-userdebug 
 

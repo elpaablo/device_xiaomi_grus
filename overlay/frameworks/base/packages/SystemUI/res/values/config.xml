@@ -110,12 +110,6 @@
     <string name="config_navBarLayoutQuickstep" translatable="false">back[1.7WC];home;contextual[1.7WC]</string>
     <string name="config_navBarLayoutHandle" translatable="false">back[40AC];home_handle;ime_switcher[40AC]</string>
 
-      <!-- Launcher package name for overlaying icons. -->
-    <string name="launcher_overlayable_package" translatable="false">com.android.launcher3</string>
-
-    <!-- ThemePicker package name for overlaying icons. -->
-    <string name="themepicker_overlayable_package" translatable="false">com.android.wallpaper</string>
-
     <!--  Flag to turn on the rendering of the above path or not  -->
     <bool name="config_enableDisplayCutoutProtection">false</bool>
 
@@ -124,10 +118,5 @@
 
     <!-- Whether to show VoLTE icon in the status bar -->
     <bool name="config_display_volte">true</bool>
-    
-    <!-- Screenshot editing default activity.  Must handle ACTION_EDIT image/png intents.
-         Blank sends the user to the Chooser first.
-         This name is in the ComponentName flattened format (package/class)  -->
-    <string name="config_screenshotEditor" translatable="false">com.google.android.markup/com.google.android.markup.AnnotateActivity</string>
 
 </resources>

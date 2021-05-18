@@ -4,4 +4,4 @@ allow platform_app cgroup:file r_file_perms;
 allow platform_app cgroup:file { open read };
 
 # FPSInfo
-allow platform_app sysfs_graphics:file r_file_perms;
+#allow platform_app sysfs_graphics:file r_file_perms;
