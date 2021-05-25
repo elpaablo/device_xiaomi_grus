@@ -69,9 +69,6 @@ TARGET_KERNEL_CLANG_COMPILE := true
 TARGET_KERNEL_SOURCE := kernel/xiaomi/grus
 TARGET_NO_KERNEL := false
 
-#TARGET_KERNEL_CLANG_VERSION := proton-clang
-#KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang/bin
-#CROSS_COMPILE=aarch64-linux-gnu-
 TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang
 
 # APEX
@@ -190,7 +187,7 @@ TARGET_USES_HWC2 := true
 TARGET_USES_QCOM_DISPLAY_BSP := true
 TARGET_USES_COLOR_METADATA := true
 TARGET_USES_DRM_PP := true
-TARGET_HAS_WIDE_COLOR_DISPLAY := true
+TARGET_HAS_WIDE_COLOR_DISPLAY := false
 TARGET_HAS_HDR_DISPLAY := true
 TARGET_USES_ION := true
 TARGET_USES_DISPLAY_RENDER_INTENTS := true

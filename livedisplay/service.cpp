@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2.09 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,14 +16,12 @@
 
 #include <dlfcn.h>
 
-#define LOG_TAG "lineage.livedisplay@2.0-service.xiaomi"
+#define LOG_TAG "lineage.livedisplay@2.1-service.xiaomi"
 
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-#include "SunlightEnhancement.h"
-#include "AdaptiveBacklight.h"
-#include "ColorEnhancement.h"
+//#include "AntiFlicker.h"
 #include "DisplayModes.h"
 #include "DisplayModesSDM.h"
 #include "PictureAdjustment.h"
@@ -35,14 +33,10 @@ using android::status_t;
 using android::hardware::configureRpcThreadpool;
 using android::hardware::joinRpcThreadpool;
 
-using ::vendor::lineage::livedisplay::V2_0::ISunlightEnhancement;
-//using ::vendor::lineage::livedisplay::V2_0::IAdaptiveBacklight;
-//using ::vendor::lineage::livedisplay::V2_0::IColorEnhancement;
+//using ::vendor::lineage::livedisplay::V2_1::IAntiFlicker;
 using ::vendor::lineage::livedisplay::V2_0::IDisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::IPictureAdjustment;
-using ::vendor::lineage::livedisplay::V2_0::implementation::SunlightEnhancement;
-//using ::vendor::lineage::livedisplay::V2_0::implementation::AdaptiveBacklight;
-//using ::vendor::lineage::livedisplay::V2_0::implementation::ColorEnhancement;
+//using ::vendor::lineage::livedisplay::V2_1::implementation::AntiFlicker;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModes;
 using ::vendor::lineage::livedisplay::V2_0::implementation::DisplayModesSDM;
 using ::vendor::lineage::livedisplay::V2_0::implementation::PictureAdjustment;
@@ -57,38 +51,23 @@ int main() {
     uint64_t cookie = 0;
 
     // HIDL frontend
-//    sp<AdaptiveBacklight> ab;
-//    sp<ColorEnhancement> ce;
+//    sp<IAntiFlicker> af;
     sp<DisplayModes> dm;
     sp<DisplayModesSDM> dms;
     sp<PictureAdjustment> pa;
-    sp<SunlightEnhancement> sunlightEnhancement;
 
     status_t status = OK;
 
     LOG(INFO) << "LiveDisplay HAL custom service is starting.";
 
-   sunlightEnhancement = new SunlightEnhancement();
-    if (sunlightEnhancement == nullptr) {
-        LOG(ERROR) << "Can not create an instance of LiveDisplay HAL SunlightEnhancement Iface,"
-                   << "exiting.";
-        goto shutdown;
-    }
-
-    if (!sunlightEnhancement->isSupported()) {
-        LOG(ERROR) << "SunlightEnhancement Iface is not supported, gracefully bailing out.";
-        return 1;
-    }
-
     configureRpcThreadpool(1, true /*callerWillJoin*/);
 
-    status = sunlightEnhancement->registerAsService();
-    if (status != OK) {
-        LOG(ERROR) << "Could not register service for LiveDisplay HAL SunlightEnhancement Iface ("
-                   << status << ")";
-        goto shutdown;
+/*    af = new AntiFlicker();
+    if (af->registerAsService() != android::OK) {
+        LOG(ERROR) << "Cannot register anti flicker HAL service.";
+        return 1;
     }
-    
+*/    
     controller = std::make_shared<SDMController>();
     if (controller == nullptr) {
         LOG(ERROR) << "Failed to create SDMController";
@@ -100,21 +79,6 @@ int main() {
         LOG(ERROR) << "Failed to initialize SDMController";
         goto shutdown;
     }
-
-/*    ab = new AdaptiveBacklight();
-    if (ab == nullptr) {
-        LOG(ERROR)
-            << "Can not create an instance of LiveDisplay HAL AdaptiveBacklight Iface, exiting.";
-        goto shutdown;
-    }
-
-    ce = new ColorEnhancement();
-    if (ce == nullptr) {
-        LOG(ERROR)
-            << "Can not create an instance of LiveDisplay HAL ColorEnhancement Iface, exiting.";
-        goto shutdown;
-    }
-*/
 
     dm = new DisplayModes();
     if (dm == nullptr) {
@@ -141,25 +105,6 @@ int main() {
     }
 
     configureRpcThreadpool(1, true /*callerWillJoin*/);
-
-/*    if (ab->isSupported()) {
-        status = ab->registerAsService();
-        if (status != OK) {
-            LOG(ERROR) << "Could not register service for LiveDisplay HAL AdaptiveBacklight Iface ("
-                       << status << ")";
-            goto shutdown;
-        }
-    }
-
-    if (ce->isSupported()) {
-        status = ce->registerAsService();
-        if (status != OK) {
-            LOG(ERROR) << "Could not register service for LiveDisplay HAL ColorEnhancement Iface ("
-                       << status << ")";
-            goto shutdown;
-        }
-    }
-*/
 
     // fallback to SDM impl if kernel display modes isn't supported
     if (dm->isSupported()) {

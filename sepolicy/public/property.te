@@ -6,5 +6,3 @@ type deviceid_prop, property_type;
 
 # RIL
 type init_rild_prop, property_type;
-
-#type sensors_prop, property_type;

@@ -44,7 +44,7 @@
          Note that this is different from whether it can control the vibration amplitude as some
          devices will be able to vary their amplitude but do not possess enough dynamic range to
          have distinct intensity levels -->
-    <bool name="config_vibration_supports_multiple_intensities">false</bool>
+    <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
     <!-- Whether or not emergency info tile should display in device info page -->
     <bool name="config_show_emergency_info_in_device_info">true</bool>

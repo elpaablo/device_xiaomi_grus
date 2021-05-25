@@ -8,6 +8,7 @@ persist.camera.             u:object_r:camera_prop:s0
 persist.vendor.camera.      u:object_r:camera_prop:s0
 vendor.camera.              u:object_r:camera_prop:s0
 vidhance.                   u:object_r:camera_prop:s0
+persist.vidhance.           u:object_r:camera_prop:s0
 jpeg.exif.                  u:object_r:camera_prop:s0
 camera.sensor.rearMain.fuseID      u:object_r:camera_prop:s0
 camera.sensor.frontAux.fuseID      u:object_r:camera_prop:s0
@@ -34,8 +35,8 @@ ro.vendor.display.ad.hdr_calib_data      u:object_r:vendor_dpps_prop:s0
 ro.vendor.display.sensortype             u:object_r:vendor_dpps_prop:s0
 
 # Fastrpc
-vendor.fastrpc.process.attrs             u:object_r:vendor_fastrpc_prop:s0
-vendor.fastrpc.debug.trace               u:object_r:vendor_fastrpc_prop:s0
+#vendor.fastrpc.process.attrs             u:object_r:vendor_adsprpc_prop:s0
+#vendor.fastrpc.debug.trace               u:object_r:vendor_adsprpc_prop:s0
 
 # Fingerprint
 fpc_kpi                    u:object_r:vendor_fp_prop:s0
@@ -58,6 +59,11 @@ ro.boot.hwversion          u:object_r:exported_default_prop:s0
 ro.carrier.name            u:object_r:exported_default_prop:s0
 ro.miui.cust_variant       u:object_r:exported_default_prop:s0
 
+# MiuiCamera
+persist.tw1.fpc.hatsunemiku        u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.debug.sf.showfps    u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.sensors.diag_buffer_mode  u:object_r:vendor_persist_camera_prop:s0
+
 # Mlipay
 vendor.sys.rpmb_state                    u:object_r:vendor_tee_listener_prop:s0
 persist.vendor.sys.pay.ifaa              u:object_r:vendor_tee_listener_prop:s0
@@ -79,7 +85,7 @@ vendor.dp.                 u:object_r:render_prop:s0
 
 # Sensors
 persist.sensor.            u:object_r:sensors_prop:s0
-persist.vendor.debug.      u:object_r:vendor_sensors_debug_prop:s0
+persist.vendor.debug.      u:object_r:vendor_sensors_dbg_prop:s0
 
 # Manufracturer
 ro.product.system.manufacturer          u:object_r:system_manufacturer_prop:s0

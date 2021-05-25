@@ -233,8 +233,8 @@ PRODUCT_PACKAGES += \
     libsdm-disp-vndapis
 
 # Display calibration
-#PRODUCT_PACKAGES += \
-     vendor.lineage.livedisplay@2.0-service.xiaomi \
+PRODUCT_PACKAGES += \
+    vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710 \
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -571,9 +571,9 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
 # Extras
 PRODUCT_PACKAGES += \
     SimTogglePlus \
+    ThermalProfiles \
 
-#    ThermalProfiles \
-    mixplorer \
+#    mixplorer \
     kiwi \
     Remove \
     SimpleGalleryPro \

@@ -1,1 +1,2 @@
-#get_prop(init, init_rild_prop)
+r_dir_file(init, proc)
+allow init proc:file rw_file_perms;

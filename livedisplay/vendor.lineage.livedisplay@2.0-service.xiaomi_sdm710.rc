@@ -1,0 +1,15 @@
+on boot
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+    chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+    
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status
+    chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status
+    
+    chown system system /dev/graphics/fb0
+    chmod 0660 /dev/graphics/fb0
+    
+service vendor.livedisplay-hal-2.0 /vendor/bin/hw/vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710
+    class late_start
+    user system
+    group system graphics
+    writepid /dev/cpuset/system-background/tasks
