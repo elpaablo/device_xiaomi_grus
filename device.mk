@@ -162,6 +162,7 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PACKAGES += \
+    BluetoothResCommon \
     libbthost_if \
     libldacBT_enc \
     libldacBT_abr \
@@ -169,7 +170,6 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     libbtconfigstore \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-    BluetoothResCommon \
 
 
 
@@ -181,12 +181,11 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.device@3.5 \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service \
-    android.hardware.camera.provider@2.4 \
     libdng_sdk.vendor \
     vendor.qti.hardware.camera.device@1.0 \
     vendor.qti.hardware.camera.device@1.0.vendor \
-    vendor.qti.hardware.camera.device@3.2.vendor
-#    camera.shim
+    vendor.qti.hardware.camera.device@3.2.vendor \
+    android.hardware.camera.provider@2.4   
 
 # CODEC 2
 PRODUCT_PACKAGES += \
@@ -305,8 +304,6 @@ PRODUCT_PACKAGES += \
     init.qcom.sh \
     init.qcom.usb.sh \
     init.kernel.rc \
-
-#    kernel_profiles_helper \
 
 # Input
 PRODUCT_COPY_FILES += \
@@ -564,20 +561,20 @@ PRODUCT_DEXPREOPT_SPEED_APPS += \
     Launcher3QuickStep \
     
 # Dialer
-PRODUCT_PACKAGES += \
+#PRODUCT_PACKAGES += \
     org.lineageos.lib.phone
 
 # Extras
 PRODUCT_PACKAGES += \
     SimTogglePlus \
-    ThermalProfiles
-
-#    mixplorer \
+    mixplorer \
     kiwi \
     Remove \
     SimpleGalleryPro \
-    OPScreenRecorder \
-    nextcloud \
+    
+#    ThermalProfiles \
+#    OPScreenRecorder \
+#    nextcloud \
 
 # MiUI Camera
 ifeq ($(TARGET_INCLUDE_MIUI_CAMERA), true)

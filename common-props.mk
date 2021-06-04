@@ -75,7 +75,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.sf.native_mode=0 \
     persist.sys.sf.color_saturation=1.2 \
     vendor.display.enable_default_color_mode=1 \
-    vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372
+
+#    vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372
 
 # Display features
 PRODUCT_PROPERTY_OVERRIDES += \

@@ -17,20 +17,34 @@ VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 # Boot SPL
 BOOT_SECURITY_PATCH = $(PLATFORM_SECURITY_PATCH)
 
-# Architecture
+# Architecture (generic/kryo385)
+#TARGET_ARCH := arm64
+#TARGET_ARCH_VARIANT := armv8-2a
+#TARGET_CPU_ABI := arm64-v8a
+#TARGET_CPU_ABI2 :=
+#TARGET_CPU_VARIANT := generic
+#TARGET_CPU_VARIANT_RUNTIME := kryo385
+
+#TARGET_2ND_ARCH := arm
+#TARGET_2ND_ARCH_VARIANT := armv8-2a
+#TARGET_2ND_CPU_ABI := armeabi-v7a
+#TARGET_2ND_CPU_ABI2 := armeabi
+#TARGET_2ND_CPU_VARIANT := generic
+#TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
+
+
+# Architecture (kryo300)
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-2a
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
-TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := kryo385
+TARGET_CPU_VARIANT := kryo300
 
 TARGET_2ND_ARCH := arm
-TARGET_2ND_ARCH_VARIANT := armv8-2a
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
-TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
+TARGET_2ND_CPU_VARIANT := kryo300
 
 TARGET_USES_64_BIT_BINDER := true
 
@@ -57,7 +71,7 @@ BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA900
 BOARD_KERNEL_CMDLINE += androidboot.hardware=qcom androidboot.console=ttyMSM0 video=vfb:640x400,bpp=32,memsize=3072000 msm_rtb.filter=0x237
 BOARD_KERNEL_CMDLINE += ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true
 BOARD_KERNEL_CMDLINE += androidboot.usbcontroller=a600000.dwc3 swiotlb=4096 loop.max_part=16
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_TAGS_OFFSET := 0x00000100
@@ -72,7 +86,7 @@ TARGET_NO_KERNEL := false
 #TARGET_KERNEL_CLANG_VERSION := proton-clang
 #KERNEL_TOOLCHAIN := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang/bin
 #CROSS_COMPILE=aarch64-linux-gnu-
-TARGET_KERNEL_CLANG_PATH := $(shell pwd)/prebuilts/clang/host/linux-x86/proton-clang
+TARGET_KERNEL_CLANG_PATH := $(shell pwd)/../arrow/prebuilts/clang/host/linux-x86/proton-clang
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -205,8 +219,8 @@ USE_DEVICE_SPECIFIC_GPS := true
 TARGET_SURFACEFLINGER_FOD_LIB := //$(DEVICE_PATH):libfod_extension.xiaomi_grus
 
 # Init
-#TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_grus
-#TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_grus
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_grus
+TARGET_RECOVERY_DEVICE_MODULES := //$(DEVICE_PATH):libinit_grus
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(DEVICE_PATH)/framework_manifest.xml

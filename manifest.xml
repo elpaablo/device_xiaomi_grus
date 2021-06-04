@@ -442,41 +442,6 @@
         <fqname>@2.1::IGoodixFingerprintDaemon/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.lineage.livedisplay</name>
-        <transport>hwbinder</transport>
-        <version>2.1</version>
-        <interface>
-            <name>ISunlightEnhancement</name>
-            <instance>default</instance>
-        </interface>
-         <!--interface>
-            <name>IAdaptiveBacklight</name>
-            <instance>default</instance>
-        </interface-->
-         <!--interface>
-            <name>IColorEnhancement</name>
-            <instance>default</instance>
-        </interface-->
-         <interface>
-            <name>IDisplayModes</name>
-            <instance>default</instance>
-        </interface>
-         <interface>
-            <name>IPictureAdjustment</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IAntiFlicker</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@2.1::ISunlightEnhancement/default</fqname>
-        <!--fqname>@2.0::IAdaptiveBacklight/default</fqname-->
-        <!--fqname>@2.0::IColorEnhancement/default</fqname-->
-        <fqname>@2.1::IDisplayModes/default</fqname>
-        <fqname>@2.1::IPictureAdjustment/default</fqname>
-        <fqname>@2.1::IAntiFlicker/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -924,7 +889,6 @@
             <name>IMTService</name>
             <instance>default</instance>
         </interface>
-        <fqname>@1.2::IMTService/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.tidaservice</name>

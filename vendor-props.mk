@@ -47,7 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.hwui.use_vulkan=false \
     ro.hwui.render_ahead=1 \
     ro.charger.enable_suspend=true \
-    vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372 \
     debug.composition.type=c2d \
     debug.cpurend.vsync=false \
     debug.egl.hw=1 \
@@ -74,5 +73,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.sf.blurs_are_expensive=1 \
     ro.min.fling_velocity=200 \
     ro.max.fling_velocity=20000 \
+    
+vendor.display.dataspace_saturation_matrix=1.16868,-0.03155,-0.01473,-0.16868,1.03155,-0.05899,0.00000,0.00000,1.07372 \
 
 

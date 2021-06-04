@@ -129,6 +129,12 @@ on boot
     chown system system /sys/class/drm/card0-DSI-1/doze_backlight
     chown system system /sys/class/touch/tp_dev/fod_status
     chown system system /sys/class/backlight/panel0-backlight/brightness_clone
+    
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+    chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param
+    
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status
+    chmod 0660 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/hbm_status
 
 ####
     # vibrator

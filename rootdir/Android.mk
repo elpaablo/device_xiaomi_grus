@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-SYSTEM_OUTPUT_PATH := /media/elpaablo/out/arrow/target/product/grus/system
+SYSTEM_OUTPUT_PATH := /media/elpaablo/out/fluid/target/product/grus/system
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.rc
@@ -71,7 +71,7 @@ LOCAL_MODULE       := init.kernel.rc
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := etc/init.kernel.rc
-LOCAL_MODULE_PATH  := $(TARGET_OUT_VENDOR_ETC)/init
+LOCAL_MODULE_PATH  := $(SYSTEM_OUTPUT_PATH)/etc/init
 LOCAL_REQUIRED_MODULES := kernel_profiles_helper
 include $(BUILD_PREBUILT)
 
@@ -80,7 +80,7 @@ LOCAL_MODULE       := kernel_profiles_helper
 LOCAL_MODULE_TAGS  := optional
 LOCAL_MODULE_CLASS := ETC
 LOCAL_SRC_FILES    := bin/kernel_profiles_helper
-LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
+LOCAL_MODULE_PATH := $(SYSTEM_OUTPUT_PATH)/bin
 include $(BUILD_PREBUILT)
 
 include $(CLEAR_VARS)

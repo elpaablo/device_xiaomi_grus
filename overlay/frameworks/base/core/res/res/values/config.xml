@@ -1191,6 +1191,6 @@
         <item>9</item> <!-- COLOR_MODE_DISPLAY_P3 -->
     </integer-array>
 
-    <integer name="config_defaultDisplayDefaultColorMode">9</integer>
+    <integer name="config_defaultDisplayDefaultColorMode">7</integer>
 
 </resources>
