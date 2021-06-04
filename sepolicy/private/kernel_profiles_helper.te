@@ -1,0 +1,13 @@
+type kernel_profiles_helper, domain;
+type kernel_profiles_helper_exec, exec_type, vendor_file_type, file_type;
+
+init_daemon_domain(kernel_profiles_helper)
+
+allow kernel_profiles_helper shell_exec:file rx_file_perms;
+allow kernel_profiles_helper toolbox_exec:file rx_file_perms;
+
+get_prop(kernel_profiles_helper, system_prop)
+
+r_dir_file(kernel_profiles_helper system_app_data_file)
+allow kernel_profiles_helper system_app_data_file:{ file lnk_file } rw_file_perms;
+

@@ -1,0 +1,11 @@
+r_dir_file(init, proc)
+allow init proc:file rw_file_perms;
+
+# Allow kernel_profiles_prop to set by Settings
+allow init system_prop:property_service set;
+
+# kernel profiles sysnodes
+r_dir_file(init, {sysfs_devices_system_cpu sysfs_io_sched_tuneable cgroup sysfs_kgsl})
+allow init {sysfs_devices_system_cpu sysfs_io_sched_tuneable cgroup sysfs_kgsl}:file rw_file_perms;
+
+

@@ -7,3 +7,7 @@
 
 /data/vendor/metadata_apex(/.*)?              u:object_r:apex_metadata_file:s0
 /data/vendor/metadata_apex/sessions(/.*)?     u:object_r:apex_metadata_file:s0
+
+# Kernel profiles
+/(vendor|system/vendor)/bin/kernel_profiles_helper  u:object_r:kernel_profiles_helper_exec:s0
+

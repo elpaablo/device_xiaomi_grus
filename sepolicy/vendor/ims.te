@@ -1,2 +1,4 @@
 allow ims diag_device:chr_file { read write };
 allow ims diag_device:chr_file { open };
+
+get_prop(ims, qcom_ims_prop)

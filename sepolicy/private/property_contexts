@@ -16,4 +16,7 @@ ro.product.system.manufacturer u:object_r:exported2_default_prop:s0 exact string
 ro.miui.                       u:object_r:exported_system_prop:s0
 
 # Adblocker
-persist.aicp.hosts_block       u:object_r:aicp_prop:s0
+persist.aicp.                  u:object_r:system_prop:s0
+
+# kernel profiles
+sys.kernel.                    u:object_r:system_prop:s0
