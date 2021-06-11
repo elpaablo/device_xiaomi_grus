@@ -1160,7 +1160,7 @@
     
     <!-- Whether or not wcg (wide color gamut) should be enabled on this device,
     we only enabled it while the device has ability of mixed color spaces composition -->
-    <bool name="config_enableWcgMode">false</bool>
+    <bool name="config_enableWcgMode">true</bool>
     
     <!-- List supported color modes. -->
     <integer-array name="config_availableColorModes">
@@ -1186,11 +1186,12 @@
         <item>2</item> <!-- COLOR_MODE_SATURATED -->
     </integer-array>
     <integer-array name="config_displayCompositionColorSpaces">
-        <item>7</item> <!-- COLOR_MODE_SRGB       -->
-        <item>0</item> <!-- COLOR_MODE_DEFAULT    -->
-        <item>9</item> <!-- COLOR_MODE_DISPLAY_P3 -->
+        <item>0</item> <!-- 00none_gamma -->
+        <item>1</item> <!-- 03srgb_d65 -->
+        <item>2</item> <!-- 36P3_native -->
+        <item>3</item> <!-- 38hal_native -->
+        <item>4</item> <!-- 40smart_mc -->
+        <item>6</item> <!-- 42game2 -->
+        <item>8</item> <!-- hal_hdr -->
     </integer-array>
-
-    <integer name="config_defaultDisplayDefaultColorMode">7</integer>
-
 </resources>

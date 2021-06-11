@@ -233,6 +233,9 @@ PRODUCT_PACKAGES += \
 # Display calibration
 #PRODUCT_PACKAGES += \
      vendor.lineage.livedisplay@2.0-service.xiaomi \
+     
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/permissions/privapp-permissions-lineagehw.xml:system/etc/permissions/privapp-permissions-lineagehw.xml
 
 # DRM
 PRODUCT_PACKAGES += \
