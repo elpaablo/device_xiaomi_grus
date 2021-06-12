@@ -62,6 +62,9 @@
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:sysfs_graphics:s0
 
+# livedisplay
+/sys/devices/platform/soc/soc:qcom,dsi-display@18/msm_fb_ea_enable                                      u:object_r:sysfs_anti_flicker:s0
+
 # Health
 /sys/devices/platform/soc/[a-z0-9]+.i2c/i2c-[0-9]/[0-9]-[a-z0-9]+/power_supply/idt(/.*)?                                                                         u:object_r:sysfs_wireless_supply:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,spmi/spmi-[0-9]/spmi[0-9]-0[0-9]/[a-z0-9]+.qcom,spmi:qcom,[a-z0-9]+@[0-9]:qcom,qpnp-smb2/power_supply/dc(/.*)?          u:object_r:sysfs_wireless_supply:s0
@@ -91,6 +94,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service	                                u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service-qti                                                                     u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock			                u:object_r:hal_power_stats_default_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sdm710                                 u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # Persist files
 /mnt/vendor/persist/audio(/.*)?               u:object_r:persist_audio_file:s0

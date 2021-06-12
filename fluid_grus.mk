@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/grus
+COMMON_PATH := ~/common
 TARGET_APPS_ARCH := arm64
 
 # Inherit from those products. Most specific first.
@@ -34,7 +35,7 @@ PRODUCT_BUILD_PROP_OVERRIDES += \
 
 MY_BUILD_TYPE := VANILLA-CUSTOM
 TARGET_INCLUDE_GAPPS := false
-TARGET_INCLUDE_MIUI_CAMERA := false
+TARGET_INCLUDE_MIUI_CAMERA := true
 
 PRODUCT_ENFORCE_VINTF_MANIFEST := false
 

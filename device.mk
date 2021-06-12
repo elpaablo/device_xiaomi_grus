@@ -8,7 +8,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
 # Vendor
-$(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
+$(call inherit-product-if-exists, $(COMMON_PATH)/vendor/xiaomi/grus/grus-vendor.mk)
 
 # Properties
 -include $(LOCAL_PATH)/common-props.mk
@@ -170,7 +170,7 @@ PRODUCT_PACKAGES += \
     libbt-vendor \
     libbtconfigstore \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
-
+    vendor.qti.hardware.btconfigstore@2.0.vendor
 
 
 #PRODUCT_COPY_FILES += \
@@ -231,8 +231,8 @@ PRODUCT_PACKAGES += \
     libsdm-disp-vndapis
 
 # Display calibration
-#PRODUCT_PACKAGES += \
-     vendor.lineage.livedisplay@2.0-service.xiaomi \
+PRODUCT_PACKAGES += \
+     vendor.lineage.livedisplay@2.1-service.xiaomi_sdm710 \
      
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-lineagehw.xml:system/etc/permissions/privapp-permissions-lineagehw.xml
@@ -581,8 +581,8 @@ PRODUCT_PACKAGES += \
 
 # MiUI Camera
 ifeq ($(TARGET_INCLUDE_MIUI_CAMERA), true)
-    $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
+    $(call inherit-product-if-exists, $(COMMON_PATH)/vendor/xiaomi/miuicamera/config.mk)
 else
 PRODUCT_COPY_FILES += \
-    $(call find-copy-subdir-files,*,vendor/xiaomi/cameralibs,$(TARGET_COPY_OUT_VENDOR)/lib)
+    $(call find-copy-subdir-files,*,$(COMMON_PATH)/vendor/xiaomi/cameralibs,$(TARGET_COPY_OUT_VENDOR)/lib)
 endif

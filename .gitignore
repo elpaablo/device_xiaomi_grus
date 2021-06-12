@@ -1,1 +1,6 @@
 /*.sh
+AndroidProducts.mk
+fluid_grus.mk
+aosp_grus.mk
+arrow_grus.mk
+*_grus.mk
