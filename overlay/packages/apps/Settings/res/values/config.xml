@@ -16,55 +16,42 @@
 
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-    <string name="additional_system_update" translatable="false">false</string>
-    <string name="additional_system_update_menu" translatable="false">false</string>
-
-    <!-- Dashboard number of columns -->
-    <integer name="dashboard_num_columns">1</integer>
-
-    <!-- Carrier_enabled editable -->
-    <bool name="config_allow_edit_carrier_enabled" translatable="false">true</bool>
-
-    <!-- When true enable color temperature setting. -->
-    <bool name="config_enableColorTemperature">true</bool>
-
-    <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
-    <string name="config_wallpaper_picker_package" translatable="false">com.android.settings</string>
-    <string name="config_wallpaper_picker_class" translatable="false">com.android.settings.Settings$WallpaperSettingsActivity</string>
-    
-    <!-- Fully-qualified class name for the styles & wallpaper picker activity. -->
-    <string name="config_styles_and_wallpaper_picker_class" translatable="false"></string>
-
-    <!-- Manufacturer backup settings to launch -->
-    <string name="config_backup_settings_intent" translatable="false"></string>
-
-    <!-- Manufacturer backup settings label -->
-    <string name="config_backup_settings_label" translatable="true"></string>
-
-    <!-- If the Storage Manager settings are enabled. -->
-    <bool name="config_storage_manager_settings_enabled">true</bool>
- 
-    <!-- Whether to enable "show operator name in the status bar" setting -->
-    <bool name="config_showOperatorNameInStatusBar">false</bool>
-
-    <!-- Whether or not to show the night light suggestion. -->
-    <bool name="config_night_light_suggestion_enabled">true</bool>
+    <bool name="config_enableManualSubProvisioning">true</bool>
 
     <!-- Whether or not the device is capable of multiple levels of vibration intensity.
          Note that this is different from whether it can control the vibration amplitude as some
          devices will be able to vary their amplitude but do not possess enough dynamic range to
          have distinct intensity levels -->
-    <bool name="config_vibration_supports_multiple_intensities">false</bool>
+    <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
-    <!-- Whether or not emergency info tile should display in device info page -->
-    <bool name="config_show_emergency_info_in_device_info">true</bool>
+    <bool name="config_show_mobile_plan">true</bool>
 
-    <!-- Settings intelligence package name -->
-    <string name="config_settingsintelligence_package_name" translatable="false">
-        com.android.settings.intelligence
-    </string>
+    <!-- Battery Health -->
+    <string name="config_batChargeCycle"></string>
+    <string name="config_batDesCap">/sys/class/power_supply/bms/charge_full_design</string>
+    <string name="config_batCurCap">/sys/class/power_supply/bms/charge_full</string>
+    <bool name="config_supportBatteryHealth">true</bool>
+    <bool name="config_showChargingCycles">false</bool> 
+    
+    <!-- Package name and fully-qualified class name for the wallpaper picker activity. -->
+    <!--string name="config_wallpaper_picker_package" translatable="false">com.android.wallpaper</string-->
+    <string name="config_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
 
-    <!-- Whether the device name is shown in About device or not -->
-    <bool name="config_show_device_name">true</bool>
-   
+    <!-- Fully-qualified class name for the styles & wallpaper picker activity. -->
+    <string name="config_styles_and_wallpaper_picker_class" translatable="false">com.android.customization.picker.CustomizationPickerActivity</string>
+
+    <!-- Settings suggestion package name -->
+    <string name="config_settingssuggestion_package_name" translatable="false">com.android.settings.intelligence</string>
+    
+    <!-- Display additional System Update menu if true -->
+    <bool name="config_additional_system_update_setting_enable">false</bool>
+    
+    
+    <!-- When true enable gesture setting. -->
+    <bool name="config_gesture_settings_enabled">true</bool>
+    
+    <!-- When true enable color temperature setting. -->
+    <bool name="config_enableColorTemperature">true</bool>
+
 </resources>
+

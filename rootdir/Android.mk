@@ -1,5 +1,5 @@
 LOCAL_PATH := $(call my-dir)
-SYSTEM_OUTPUT_PATH := /media/elpaablo/out/fluid/target/product/grus/system
+SYSTEM_OUTPUT_PATH := /media/elpaablo/out/arrow/target/product/grus/system
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.qcom.rc

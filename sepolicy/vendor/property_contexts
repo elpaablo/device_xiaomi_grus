@@ -90,4 +90,4 @@ ro.vendor.aware_available   u:object_r:vendor_aware_available_prop:s0
 vendor.fastrpc              u:object_r:vendor_fastrpc_prop:s0
 
 # Camera (temporary. waiting for framework to be updated to use packageexcludelist instead of packageblacklist)
-vendor.camera.aux.packageblacklist                          u:object_r:exported_default_prop:s0
+#vendor.camera.aux.packageblacklist                          u:object_r:exported_default_prop:s0

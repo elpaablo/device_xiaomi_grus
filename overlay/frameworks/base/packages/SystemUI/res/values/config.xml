@@ -20,8 +20,19 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
+    <!-- Enabke Burn in protection -->
+    <bool name="config_statusBarBurnInProtection">true</bool>
 
-    <!-- The maximum number of tiles in the QuickQSPanel -->
+    <!-- Doze: check proximity sensor before pulsing? -->
+    <bool name="doze_proximity_check_before_pulse">false</bool>
+
+    <!-- Doze: does this device support STATE_DOZE?  -->
+    <bool name="doze_display_state_supported">true</bool>
+
+    <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
+    <bool name="doze_suspend_display_state_supported">false</bool>
+    
+        <!-- The maximum number of tiles in the QuickQSPanel -->
     <integer name="quick_qs_panel_max_columns">6</integer>
 
     <!-- The number of columns in the QuickSettings -->
@@ -33,97 +44,31 @@
     <!-- The number of columns that the top level tiles span in the QuickSettings -->
     <integer name="quick_settings_user_time_settings_tile_span">1</integer>
 
-    <!-- The default tiles to display in QuickSettings -->
-    <string name="quick_settings_tiles_default" translatable="false">
-        wifi,bt,dnd,flashlight,rotation,battery,cell,airplane,hotspot,screenrecord,dark,nfc
-    </string>
-
     <!-- The minimum number of tiles to display in QuickSettings -->
     <integer name="quick_settings_min_num_tiles">6</integer>
-
+    
+    <integer name="config_maxVisibleNotificationIcons">6</integer>
+    <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
+    <integer name="config_maxVisibleStatusIconContainer">7</integer>
+    
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-        wifi,bt,cell,dataswitch,kernelprofile,sound,battery,flashlight,nfc,location,aod,sync,rotation,airplane,hotspot,caffeine,dnd,powershare,dc_dimming,powermenu,inversion,saver,dark,work,cast,night,screenrecord,reverse,heads_up
+	wifi,bt,cell,dataswitch,nfc,location,aod,cpuinfo,fpsinfo,kernelprofile,battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot	wifi,cell,dataswitch,nfc,location,sound,flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
     </string>
-
-    <!-- The tiles to display in QuickSettings -->
-    <string name="quick_settings_tiles" translatable="false">wifi,custom(com.elpaablo.simtoggleplus/.Sim1TileService),custom(com.elpaablo.simtoggleplus/.Sim2TileService),bt,custom(com.elpaablo.simtoggleplus/.LTETileService),cell,custom(com.elpaablo.simtoggleplus/.ADBTileService),custom(com.elpaablo.simtoggleplus/.RCTileService),dataswitch,kernelprofile,sound,battery,flashlight,nfc,location,aod,sync,rotation,airplane,hotspot,caffeine,dnd,powershare,dc_dimming,powermenu,inversion,saver,dark,work,cast,night,screenrecord,reverse,heads_up</string>
-
-
-    <!-- Show indicator for Wifi on but not connected. -->
-    <bool name="config_showWifiIndicatorWhenEnabled">true</bool>
-
-    <!-- Doze: does this device support STATE_DOZE?  -->
-    <bool name="doze_display_state_supported">true</bool>
-
-    <!-- Doze: does this device support STATE_DOZE_SUSPEND?  -->
-    <bool name="doze_suspend_display_state_supported">false</bool>
-
-    <!-- Doze: should the significant motion sensor be used as a pulse signal? -->
-    <bool name="doze_pulse_on_significant_motion">true</bool>
-
-    <!-- Doze: check proximity sensor before pulsing? -->
-    <bool name="doze_proximity_check_before_pulse">true</bool>
-
-    <!-- Doze: should notifications be used as a pulse signal? -->
-    <bool name="doze_pulse_on_notifications">true</bool>
-
-    <!-- Doze: duration to avoid false pickup gestures triggered by notification vibrations -->
-    <integer name="doze_pickup_vibration_threshold">2000</integer>
-
-    <!-- Type of a sensor that provides a low-power estimate of the desired display
-         brightness, suitable to listen to while the device is asleep (e.g. during
-         always-on display) -->
+    
+    <!-- The default tiles to display in QuickSettings -->
+    <string name="quick_settings_tiles_default" translatable="false">
+	wifi,custom(com.elpaablo.simtoggleplus/.Sim1TileService),custom(com.elpaablo.simtoggleplus/.Sim2TileService),bt,custom(com.elpaablo.simtoggleplus/.LTETileService),cell,custom(com.elpaablo.simtoggleplus/.ADBTileService),custom(com.elpaablo.simtoggleplus/.RCTileService),dataswitch,nfc,location,aod,cpuinfo,fpsinfo,kernelprofile,sound,custom(com.oneplus.screenrecord/.core.SystemUITileService),battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot
+    </string>
+    
     <string name="doze_brightness_sensor_type" translatable="false">xiaomi.sensor.aod</string>
 
-    <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
-               to brightness values; -1 means keeping the current brightness. -->
-    <integer-array name="config_doze_brightness_sensor_to_brightness">
-        <item>-1</item> <!-- 0: OFF -->
-        <item>2</item> <!-- 1: NIGHT -->
-        <item>5</item> <!-- 2: LOW -->
-        <item>27</item> <!-- 3: HIGH -->
-        <item>28</item> <!-- 4: SUN -->
-    </integer-array>
-
-    <!-- Doze: Table that translates sensor values from the doze_brightness_sensor_type sensor
-               to an opacity value for a black scrim that is overlayed in AOD1.
-               Valid range is from 0 (transparent) to 255 (opaque).
-               -1 means keeping the current opacity. -->
-    <integer-array name="config_doze_brightness_sensor_to_scrim_opacity">
-        <item>-1</item> <!-- 0: OFF -->
-        <item>0</item> <!-- 1: NIGHT -->
-        <item>0</item> <!-- 2: LOW -->
-        <item>0</item> <!-- 3: HIGH -->
-        <item>0</item> <!-- 4: SUN -->
-    </integer-array>
-
-    <!-- Doze: whether the double tap sensor reports 2D touch coordinates -->
-    <bool name="doze_double_tap_reports_touch_coordinates">false</bool>
-
-    <!-- QS tile shape store width. negative implies fill configuration instead of stroke-->
-    <dimen name="config_qsTileStrokeWidthActive">-1dp</dimen>
-    <dimen name="config_qsTileStrokeWidthInactive">-1dp</dimen>
-
-    <!-- Nav bar button default ordering/layout -->
-    <string name="config_navBarLayout" translatable="false">left[.5W],back[1WC];home;recent[1WC],right[.5W]</string>
-    <string name="config_navBarLayoutQuickstep" translatable="false">back[1.7WC];home;contextual[1.7WC]</string>
-    <string name="config_navBarLayoutHandle" translatable="false">back[40AC];home_handle;ime_switcher[40AC]</string>
-
-      <!-- Launcher package name for overlaying icons. -->
-    <string name="launcher_overlayable_package" translatable="false">com.android.launcher3</string>
-
-    <!-- ThemePicker package name for overlaying icons. -->
-    <string name="themepicker_overlayable_package" translatable="false">com.android.wallpaper</string>
-
+    
     <!--  Flag to turn on the rendering of the above path or not  -->
     <bool name="config_enableDisplayCutoutProtection">false</bool>
 
     <!-- Respect drawable/rounded.xml intrinsic size for multiple radius corner path customization -->
     <bool name="config_roundedCornerMultipleRadius">false</bool>
-
-    <!-- Whether to show VoLTE icon in the status bar -->
-    <bool name="config_display_volte">true</bool>
     
     <!-- Screenshot editing default activity.  Must handle ACTION_EDIT image/png intents.
          Blank sends the user to the Chooser first.

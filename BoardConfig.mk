@@ -80,10 +80,10 @@ TARGET_KERNEL_ARCH := arm64
 
 TARGET_KERNEL_CONFIG := kowalski_custom_defconfig
 TARGET_KERNEL_CLANG_COMPILE := true
-TARGET_KERNEL_SOURCE := $(COMMON_PATH)/kernel/xiaomi/grus
+TARGET_KERNEL_SOURCE := kernel/xiaomi/grus
 TARGET_NO_KERNEL := false
 
-TARGET_KERNEL_CLANG_PATH := $(COMMON_PATH)/proton-clang
+TARGET_KERNEL_CLANG_PATH := /home/elpaablo/arrow/prebuilts/clang/host/linux-x86/proton-clang
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
