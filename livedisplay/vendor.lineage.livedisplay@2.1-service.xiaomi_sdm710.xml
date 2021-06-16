@@ -2,11 +2,7 @@
     <hal format="hidl">
         <name>vendor.lineage.livedisplay</name>
         <transport>hwbinder</transport>
-        <version>2.1</version>
-        <!--interface>
-            <name>IAntiFlicker</name>
-            <instance>default</instance>
-        </interface-->
+        <version>2.0</version>
         <interface>
             <name>IDisplayModes</name>
             <instance>default</instance>
@@ -15,8 +11,7 @@
             <name>IPictureAdjustment</name>
             <instance>default</instance>
         </interface>
-        <!--fqname>@2.1::IAntiFlicker/default</fqname-->
-        <fqname>@2.1::IDisplayModes/default</fqname>
-        <fqname>@2.1::IPictureAdjustment/default</fqname>
+        <fqname>@2.0::IDisplayModes/default</fqname>
+        <fqname>@2.0::IPictureAdjustment/default</fqname>
     </hal>
 </manifest>

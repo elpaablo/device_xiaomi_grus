@@ -21,7 +21,7 @@
 #include <android-base/logging.h>
 #include <binder/ProcessState.h>
 #include <hidl/HidlTransportSupport.h>
-#include "AntiFlicker.h"
+//#include "AntiFlicker.h"
 #include "DisplayModes.h"
 #include "DisplayModesSDM.h"
 #include "PictureAdjustment.h"
