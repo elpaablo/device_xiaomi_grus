@@ -24,3 +24,4 @@ allow vendor_init tombstone_data_file:lnk_file read;
 allow vendor_init vendor_fp_prop:property_service set;
 
 allow init adsprpcd_file:file mounton;
+allow init adsprpcd_file:{file lnk_file} r_file_perms;

@@ -232,7 +232,7 @@ PRODUCT_PACKAGES += \
 
 # Display calibration
 PRODUCT_PACKAGES += \
-     vendor.lineage.livedisplay@2.1-service.xiaomi_sdm710 \
+     vendor.lineage.livedisplay@2.0-service.xiaomi_sdm710 \
      
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/permissions/privapp-permissions-lineagehw.xml:system_ext/etc/permissions/privapp-permissions-lineagehw.xml
@@ -574,10 +574,9 @@ PRODUCT_PACKAGES += \
     kiwi \
     Remove \
     SimpleGalleryPro \
-    
-#    ThermalProfiles \
-#    OPScreenRecorder \
-#    nextcloud \
+    OPScreenRecorder \
+    ThermalProfiles \
+    nextcloud \
 
 # MiUI Camera
 ifeq ($(TARGET_INCLUDE_MIUI_CAMERA), true)

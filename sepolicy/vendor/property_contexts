@@ -58,7 +58,7 @@ ro.miui.cust_variant           u:object_r:exported_default_prop:s0
 # MiuiCamera
 persist.tw1.fpc.hatsunemiku        u:object_r:vendor_persist_camera_prop:s0
 persist.vendor.debug.sf.showfps    u:object_r:vendor_persist_camera_prop:s0
-persist.vendor.sensors.diag_buffer_mode  u:object_r:vendor_persist_camera_prop:s0
+persist.vendor.sensors.diag_buffer_mode  u:object_r:vendor_sensors_prop:s0
 
 # Mlipay
 vendor.sys.rpmb_state                    u:object_r:vendor_tee_listener_prop:s0
@@ -81,7 +81,7 @@ vendor.dp.                 u:object_r:render_prop:s0
 
 # Sensors
 persist.sensor.                   u:object_r:sensors_prop:s0
-persist.vendor.debug.sensors      u:object_r:vendor_sensors_debug_prop:s0
+persist.vendor.debug.sensors      u:object_r:vendor_sensors_dbg_prop:s0
 
 # Manufracturer
 ro.product.system.manufacturer          u:object_r:system_manufacturer_prop:s0
@@ -91,7 +91,6 @@ sys.thermal.                u:object_r:thermal_engine_prop:s0
 persist.sys.thermal.        u:object_r:thermal_engine_prop:s0
 
 ro.vendor.aware_available   u:object_r:vendor_aware_available_prop:s0
-vendor.fastrpc              u:object_r:vendor_fastrpc_prop:s0
 
 # Camera (temporary. waiting for framework to be updated to use packageexcludelist instead of packageblacklist)
 #vendor.camera.aux.packageblacklist                          u:object_r:exported_default_prop:s0

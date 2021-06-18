@@ -10,8 +10,45 @@ service kernel_profiles_helper /system/bin/kernel_profiles_helper
     disabled
     
 # Set permissions
-#on boot
-    #chmod 755 /system/bin/kernel_profiles_helper
+on boot
+   # little cluster sysnodes
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/scaling_governor 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/scaling_min_freq 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/scaling_max_freq 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/up_rate_limit_us 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/down_rate_limit_us 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy0/schedutil/hispeed_load 
+
+   # big cluster sysnodes
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/scaling_governor 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/scaling_min_freq 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/scaling_max_freq 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/up_rate_limit_us 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/down_rate_limit_us 
+   chmod 664 /sys/devices/system/cpu/cpufreq/policy6/schedutil/hispeed_load 
+
+   # gpu sysnodes
+   chmod 664 /sys/class/kgsl/kgsl-3d0/devfreq/governor 
+   chmod 664 /sys/class/kgsl/kgsl-3d0/min_clock_mhz 
+   chmod 664 /sys/class/kgsl/kgsl-3d0/max_clock_mhz 
+
+   # io sysnodes
+   chmod 664 /sys/block/sda/queue/scheduler 
+   chmod 664 /sys/block/sda/queue/read_ahead_kb 
+
+   chmod 664 /sys/block/sde/queue/scheduler 
+   chmod 664 /sys/block/sde/queue/read_ahead_kb 
+    
+   # schedtune
+   chmod 664 /dev/stune/top-app/schedtune.boost 
+   
+    
+   # core control
+   chmod 664 /sys/devices/system/cpu/cpu4/online 
+   chmod 664 /sys/devices/system/cpu/cpu5/online 
+   chmod 664 /sys/devices/system/cpu/cpu6/online 
+   chmod 664 /sys/devices/system/cpu/cpu7/online 
+
 
 # Boots much faster when performance mode is enabled on boot
 #on property:init.svc.bootanim=running

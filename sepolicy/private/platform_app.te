@@ -8,4 +8,3 @@ allow platform_app system_prop:property_service set;
 
 # kernel profiles sysnodes
 r_dir_file(platform_app, {sysfs_devices_system_cpu sysfs_io_sched_tuneable cgroup sysfs_kgsl})
-#allow platform_app {sysfs_devices_system_cpu sysfs_io_sched_tuneable cgroup sysfs_kgsl}:file rw_file_perms;

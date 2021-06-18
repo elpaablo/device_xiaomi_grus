@@ -3,7 +3,7 @@
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
 # (e.g. Google Camera App)
 /mnt/vendor/dsp/fastrpc_shell_3               u:object_r:public_adsprpcd_file:s0
-/vendor/bin/adsprpcd		                      u:object_r:adsprpcd_exec:s0
+/vendor/bin/adsprpcd		              u:object_r:adsprpcd_exec:s0
 
 # Audio devices
 /dev/elliptic(.*)?                            u:object_r:sound_device:s0
@@ -45,7 +45,7 @@
 /sys/devices/virtual/touch/tp_dev/fod_status  u:object_r:sysfs_fod:s0
 
 # FPS Info
-/sys/devices/virtual/graphics/fb0/measured_fps                              u:object_r:sysfs_fps:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps                             u:object_r:sysfs_fps:s0
 
 # GPS devices
 /dev/bbd_control                              u:object_r:gps_device:s0
@@ -57,7 +57,7 @@
 /sys/devices/platform/soc/[0-9]+\.spi/spi_master/spi[0-9]+/spi[0-9]+\.0/nstandby   u:object_r:sysfs_gps:s0
 
 # Graphics nodes
-/sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/disp_param        u:object_r:sysfs_graphics:s0
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/card0-DSI-1/disp_param                        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/hbm_status        u:object_r:sysfs_graphics:s0
 /sys/devices/platform/soc/[a-z0-9]+.qcom,mdss_mdp/drm/card([0-3])+/card([0-3])+-DSI-1/panel_info        u:object_r:sysfs_graphics:s0
 
@@ -99,7 +99,7 @@
 /(vendor|system/vendor)/bin/hw/vendor\.xiaomi\.hardware\.touchfeature@1\.0-service	                                u:object_r:hal_touchfeature_xiaomi_default_exec:s0
 /vendor/bin/hw/android\.hardware\.power-service-qti                                                                     u:object_r:hal_power_default_exec:s0
 /(vendor|system/vendor)/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock			                u:object_r:hal_power_stats_default_exec:s0
-/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sdm710                                 u:object_r:hal_lineage_livedisplay_qti_exec:s0
+/(vendor|system/vendor)/bin/hw/vendor\.lineage\.livedisplay@2\.0-service\.xiaomi_sdm710                                 u:object_r:hal_lineage_livedisplay_qti_exec:s0
 
 # NFC
 /dev/pn54x                                    u:object_r:nfc_device:s0

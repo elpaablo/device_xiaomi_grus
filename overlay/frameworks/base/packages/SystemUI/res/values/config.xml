@@ -33,10 +33,10 @@
     <bool name="doze_suspend_display_state_supported">false</bool>
     
         <!-- The maximum number of tiles in the QuickQSPanel -->
-    <integer name="quick_qs_panel_max_columns">6</integer>
+    <integer name="quick_qs_panel_max_columns">5</integer>
 
     <!-- The number of columns in the QuickSettings -->
-    <integer name="quick_settings_num_columns">6</integer>
+    <integer name="quick_settings_num_columns">3</integer>
 
     <!-- The number of rows in the QuickSettings -->
     <integer name="quick_settings_max_rows">3</integer>
@@ -45,7 +45,7 @@
     <integer name="quick_settings_user_time_settings_tile_span">1</integer>
 
     <!-- The minimum number of tiles to display in QuickSettings -->
-    <integer name="quick_settings_min_num_tiles">6</integer>
+    <integer name="quick_settings_min_num_tiles">3</integer>
     
     <integer name="config_maxVisibleNotificationIcons">6</integer>
     <integer name="config_maxVisibleNotificationIconsOnLock">6</integer>
@@ -53,7 +53,7 @@
     
     <!-- Tiles native to System UI. Order should match "quick_settings_tiles_default" -->
     <string name="quick_settings_tiles_stock" translatable="false">
-	wifi,bt,cell,dataswitch,nfc,location,aod,cpuinfo,fpsinfo,kernelprofile,battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot	wifi,cell,dataswitch,nfc,location,sound,flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
+	wifi,bt,cell,dataswitch,nfc,location,aod,cpuinfo,fpsinfo,kernelprofile,battery,dnd,flashlight,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,weather,reboot,wifi,cell,dataswitch,nfc,location,sound,flashlight,battery,weather,dnd,rotation,airplane,hotspot,inversion,saver,dark,work,cast,night,reverse,heads_up,usb_tether,screenshot,caffeine,reboot
     </string>
     
     <!-- The default tiles to display in QuickSettings -->

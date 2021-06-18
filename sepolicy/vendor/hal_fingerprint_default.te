@@ -23,3 +23,5 @@ hal_client_domain(hal_fingerprint_default, hal_perf)
 # Ignore all logging requests
 dontaudit hal_fingerprint storage_file:dir search;
 add_hwservice(hal_fingerprint_default, hal_fingerprint_hwservice_xiaomi)
+
+get_prop(hal_fingerprint_default, adsprpc_prop)

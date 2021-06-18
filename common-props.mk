@@ -3,7 +3,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     audio.deep_buffer.media=true \
     ro.af.client_heap_size_kbyte=7168 \
     ro.config.media_vol_steps=25 \
-    ro.config.vc_call_vol_steps=7
+    ro.config.vc_call_vol_steps=15
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \

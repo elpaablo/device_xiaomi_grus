@@ -6,4 +6,6 @@ allow platform_app nfc_service:service_manager { find };
 get_prop(platform_app, vendor_display_notch_prop)
 
 # FPS Info
-allow platform_app sysfs_fps:file rw_file_perms;
+allow platform_app sysfs_fps:file r_file_perms;
+
+binder_call(platform_app, hal_lineage_fod_default)
