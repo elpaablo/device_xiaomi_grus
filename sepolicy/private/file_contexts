@@ -10,4 +10,3 @@
 # Kernel profiles
 /(vendor|system/vendor)/bin/kernel_profiles_helper  u:object_r:kernel_profiles_helper_exec:s0
 
-/dev/block/platform/soc/1d84000\.ufshc/by-name/cust    u:object_r:metadata_block_device:s0
