@@ -68,6 +68,8 @@ PRODUCT_GAPPS_CLIENTID_BASE := android-xiaomi
 PRODUCT_PACKAGES_DEBUG := false
 PRODUCT_PACKAGES_DEBUG_ASAN := false
 
-# Mark build as not debuggable
+# Property overrides
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false \
     ro.debuggable=0
+
