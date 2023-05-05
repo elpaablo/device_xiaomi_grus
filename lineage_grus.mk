@@ -23,9 +23,18 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 9 SE
 PRODUCT_MANUFACTURER := Xiaomi
 
-WITH_GAPPS := false
-TARGET_CORE_GAPPS := false
-TARGET_OPTOUT_GOOGLE_TELEPHONY := false
+# WITH_GAPPS
+# 0 - NO GAPPS (DEFAULT)
+# 1 - CORE GAPPS
+# 2 - FULL GAPPS
+
+WITH_GAPPS ?= 0
+
+ifeq ($(strip $(WITH_GAPPS)),2)
+TARGET_USE_GOOGLE_TELEPHONY := true
+else
+TARGET_USE_GOOGLE_TELEPHONY := false
+endif
 
 # Alpha internal properties
 TARGET_HAS_UDFPS := true
