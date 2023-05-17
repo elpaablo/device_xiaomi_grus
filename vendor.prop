@@ -241,6 +241,16 @@ persist.rcs.supported=0
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SDM710
 
+# Touch Hax
+touch.size.scale=1
+touch.size.bias=0
+touch.size.isSummed=0
+touch.pressure.scale=0.001
+touch.distance.calibration=none
+touch.distance.scale=0
+touch.coverage.calibration=box
+touch.gestureMode=spots
+
 # USB
 vendor.usb.diag.func.name=diag
 vendor.usb.dpl.inst.name=dpl
