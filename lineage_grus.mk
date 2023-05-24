@@ -23,32 +23,38 @@ PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi 9 SE
 PRODUCT_MANUFACTURER := Xiaomi
 
-# WITH_GAPPS
-# 0 - NO GAPPS (DEFAULT)
-# 1 - CORE GAPPS
-# 2 - FULL GAPPS
-
-WITH_GAPPS ?= 0
-
-ifeq ($(strip $(WITH_GAPPS)),2)
-TARGET_USE_GOOGLE_TELEPHONY := true
-else
-TARGET_USE_GOOGLE_TELEPHONY := false
-endif
-
-# Alpha internal properties
+# Device config
 TARGET_HAS_UDFPS := true
 TARGET_ENABLE_BLUR := true
-TARGET_INCLUDE_MATLOG := false
-TARGET_USE_GRAPHENE_CAMERA := false
-TARGET_USE_PIXEL_LAUNCHER := false
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
+# GAPPS config
+# 0 - NO GAPPS (default)
+# 1 - CORE GAPPS
+# 2 - FULL GAPPS
+WITH_GAPPS := 2
+
+# Use Google Telephony pack (Dialer, Contacts, Messaging) on GAPPS builds
+# Default = true
+# TARGET_USE_GOOGLE_TELEPHONY := false
+
+# Include Pixel Framework on FULL GAPPS builds
+# Default = true
+TARGET_USE_PIXEL_FRAMEWORK := true
+
+# Include GMS Compat on vanilla builds
+# Default = true
+# TARGET_USE_GMS_COMPAT := true
+
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+TARGET_DEFAULT_ADB_ENABLED := true
+
+# Maintainer
 ALPHA_BUILD_TYPE := Official
 ALPHA_MAINTAINER := elpaablo
 
-### out ###
 #BUILD_FINGERPRINT := "google/raven/raven:13/TP1A.221005.002/9012097:user/release-keys" \
 
 #PRODUCT_BUILD_PROP_OVERRIDES += \
@@ -56,7 +62,7 @@ ALPHA_MAINTAINER := elpaablo
 #    PRODUCT_NAME="grus" \
 #    TARGET_DEVICE="grus"
 
-# PRODUCT_PROPERTY_OVERRIDES += \
+#PRODUCT_PROPERTY_OVERRIDES += \
 #    ro.build.fingerprint=$(BUILD_FINGERPRINT) \
 #    ro.build.description=$(PRIVATE_BUILD_DESC)
 
@@ -69,8 +75,3 @@ PRODUCT_PACKAGES_DEBUG_ASAN := false
 # Mark build as not debuggable
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.debuggable=0
-
-# Fling Sysprops
-PRODUCT_SYSTEM_EXT_PROPERTIES += \
-    ro.min.fling_velocity=50 \
-    ro.max.fling_velocity=16000
