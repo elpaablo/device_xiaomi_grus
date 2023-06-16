@@ -20,8 +20,8 @@
 -->
 <resources>
 
-    <dimen name="status_bar_padding_start">4dp</dimen>
-    <dimen name="status_bar_padding_end">2dp</dimen>
-    <dimen name="status_bar_padding_top">1dp</dimen>
+    <dimen name="status_bar_padding_start">5px</dimen>
+    <dimen name="status_bar_padding_end">5px</dimen>
+    <dimen name="status_bar_padding_top">2px</dimen>
 
 </resources>

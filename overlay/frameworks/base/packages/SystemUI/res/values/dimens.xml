@@ -24,7 +24,7 @@
     <!-- Margin on the left side of the carrier text on Keyguard -->
     <dimen name="keyguard_carrier_text_margin">26dp</dimen>
 
-    <dimen name="max_window_blur_radius">125px</dimen>
+    <dimen name="max_window_blur_radius">46px</dimen>
 
     <!-- Margin on the right side of the system icon group on Keyguard. -->
     <dimen name="system_icons_keyguard_padding_end">8dp</dimen>
