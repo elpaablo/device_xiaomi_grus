@@ -229,6 +229,10 @@ PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service
 
+# Health (Lineage)
+PRODUCT_PACKAGES += \
+    vendor.lineage.health-service.default
+
 # HWBinder
 PRODUCT_PACKAGES += \
     libhwbinder \
