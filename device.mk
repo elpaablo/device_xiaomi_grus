@@ -135,6 +135,9 @@ PRODUCT_PACKAGES += \
     audio.bluetooth.default \
     android.hardware.bluetooth.audio-impl \
     android.hardware.bluetooth@1.0.vendor \
+    android.hardware.bluetooth@1.1.vendor \
+    android.hardware.bluetooth.audio@2.1.vendor \
+    vendor.qti.hardware.bluetooth_audio@2.0.vendor \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
@@ -150,11 +153,15 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     vendor.qti.hardware.camera.device@1.0.vendor
 
+# CODEC 2
+PRODUCT_PACKAGES += \
+    libcodec2_vndk.vendor \
+    libcodec2_hidl@1.0.vendor
+
 # Consumer IR
 PRODUCT_PACKAGES += \
     android.hardware.ir@1.0-impl \
     android.hardware.ir@1.0-service
-
 
 # Display/Graphics
 PRODUCT_PACKAGES += \
@@ -266,7 +273,9 @@ PRODUCT_COPY_FILES += \
 # Keymaster
 PRODUCT_PACKAGES += \
     android.hardware.gatekeeper@1.0 \
-    android.hardware.keymaster@4.1
+    android.hardware.gatekeeper@1.0.vendor \
+    android.hardware.keymaster@4.1 \
+    android.hardware.keymaster@4.1.vendor
 
 # Lights
 PRODUCT_PACKAGES += \
@@ -377,9 +386,14 @@ PRODUCT_PACKAGES += \
 # RIL
 PRODUCT_PACKAGES += \
     android.hardware.radio.deprecated@1.0 \
+    android.hardware.radio.deprecated@1.0.vendor \
     android.hardware.radio@1.2 \
+    android.hardware.radio@1.2.vendor \
     android.hardware.radio@1.5 \
+    android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.1 \
+    android.hardware.radio.config@1.1.vendor \
+    android.hardware.radio.config@1.2.vendor \
     libjson \
     librmnetctl \
     libxml2 \
@@ -396,10 +410,13 @@ PRODUCT_PACKAGES += \
 
 # Secure Element
 PRODUCT_PACKAGES += \
-    android.hardware.secure_element@1.0-service
+    android.hardware.secure_element@1.0-service \
+    android.hardware.secure_element@1.1.vendor \
+    android.hardware.secure_element@1.2.vendor
 
 # Sensors
 PRODUCT_PACKAGES += \
+    android.frameworks.sensorservice@1.0.vendor \
     android.hardware.sensors@1.0-impl \
     android.hardware.sensors@1.0-service \
     libsensorndkbridge \
@@ -473,6 +490,9 @@ PRODUCT_PACKAGES += \
     libwifi-hal \
     libwifi-hal-qcom \
     libwpa_client \
+    vendor.qti.hardware.wifi.hostapd@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@1.0.vendor \
+    vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     wpa_supplicant \
     wpa_supplicant.conf \
     hostapd_cli \
