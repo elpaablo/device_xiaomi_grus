@@ -522,18 +522,15 @@ PRODUCT_PACKAGES += \
 
 #    KcalSettings \
 
-ifneq ($(WITH_GAPPS),true)
-PRODUCT_PACKAGES += \
-    Mull
-else
-ifeq ($(TARGET_CORE_GAPPS),true)
-PRODUCT_PACKAGES += \
-    Mull
-endif
-endif
-
-# device_hidl.mk
-$(call inherit-product-if-exists, device/xiaomi/grus/device_hidl.mk)
+#ifeq ($(WITH_GAPPS), false)
+#PRODUCT_PACKAGES += \
+#    Mull
+#else
+#ifeq ($(TARGET_INCLUDE_GOOGLE_CHROME), false)
+#PRODUCT_PACKAGES += \
+#    Mull
+#endif
+#endif
 
 # init scripts
-$(call inherit-product-if-exists, device/xiaomi/grus/rootdir/init_config.mk)
+$(call inherit-product, device/xiaomi/grus/rootdir/init_config.mk)

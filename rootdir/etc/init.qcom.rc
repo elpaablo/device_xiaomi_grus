@@ -57,29 +57,17 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    mount_all /vendor/etc/fstab.qcom --early
-
+    mount_all /vendor/etc/fstab.qcom
     mkdir /mnt/vendor/persist 0771 root system
+    chown root system /mnt/vendor/persist
     chmod 0771 /mnt/vendor/persist
+    swapon_all /vendor/etc/fstab.qcom
     restorecon_recursive /mnt/vendor/persist
     mkdir /mnt/vendor/persist/audio 0755 system system
     mkdir /mnt/vendor/persist/data 0700 system system
-    mkdir /mnt/vendor/persist/fdsd 0770 system system
+    mkdir /mnt/vendor/persist/fdsd 0777 root root
     mkdir /mnt/vendor/persist/stability 0755 system system
     mkdir /mnt/vendor/persist/wlan_bt 0755 system system
-    chmod 0644 /mnt/vendor/persist/audio/us_manual_cal
-    mkdir /dev/logfs 0771 system system
-    mount_all /vendor/etc/logfs_fstab.qti --early
-
-on late-fs
-    # Wait for hwservicemanager ready since fsck might be triggered in mount_all --late
-    # In such case, init won't responce the property_set from hwservicemanager and then
-    # cause services for bootanim not running.
-    wait_for_prop hwservicemanager.ready true
-
-    exec_start wait_for_keymaster
-    mount_all /vendor/etc/fstab.qcom --late
-
 
 on post-fs
     # Start service for bootanim

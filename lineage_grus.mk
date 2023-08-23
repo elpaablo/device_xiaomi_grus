@@ -29,23 +29,19 @@ TARGET_ENABLE_BLUR := true
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-# GAPPS config
-# 0 - NO GAPPS (default)
-# 1 - CORE GAPPS
-# 2 - FULL GAPPS
-WITH_GAPPS := 2
-
-# Use Google Telephony pack (Dialer, Contacts, Messaging) on GAPPS builds
-# Default = true
-# TARGET_USE_GOOGLE_TELEPHONY := false
-
-# Include Pixel Framework on FULL GAPPS builds
-# Default = true
-TARGET_USE_PIXEL_FRAMEWORK := true
-
-# Include GMS Compat on vanilla builds
-# Default = true
-# TARGET_USE_GMS_COMPAT := true
+# GAPPS
+WITH_GAPPS := true
+TARGET_INCLUDE_GOOGLE_APP := true
+TARGET_INCLUDE_GOOGLE_CALCULATOR := true
+TARGET_INCLUDE_GOOGLE_CALENDAR := false
+TARGET_INCLUDE_GOOGLE_CHROME := false
+TARGET_INCLUDE_GOOGLE_DESKCLOCK := false
+TARGET_INCLUDE_GOOGLE_DRIVE := false
+TARGET_INCLUDE_GMAIL := false
+TARGET_INCLUDE_GOOGLE_MAPS := false
+TARGET_INCLUDE_GOOGLE_PHOTOS := true
+TARGET_INCLUDE_GOOGLE_SETUP := true
+TARGET_INCLUDE_PIXEL_FRAMEWORK := false
 
 # Debugging
 TARGET_INCLUDE_MATLOG := false
