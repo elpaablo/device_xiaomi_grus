@@ -35,3 +35,5 @@ type sysfs_touchpanel, sysfs_type, fs_type;
 type thermal_data_file, data_file_type, file_type;
 
 type kcal_dev, sysfs_type, fs_type;
+
+type vendor_sysfs_battery_supply, sysfs_type, fs_type;
