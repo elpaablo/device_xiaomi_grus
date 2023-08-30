@@ -5,7 +5,7 @@
 #
 
 # Vendor
-$(call inherit-product-if-exists, vendor/xiaomi/grus/grus-vendor.mk)
+$(call inherit-product, vendor/xiaomi/grus/grus-vendor.mk)
 
 # Dalvik
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
