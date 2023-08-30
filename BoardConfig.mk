@@ -222,6 +222,9 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor $(DEVICE_PATH)/sepolicy/miuicamera/vendor
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
+# Sepolicy Pixel
+BOARD_VENDOR_SEPOLICY_DIRS += hardware/google/pixel-sepolicy/googlebattery
+
 # SPL
 VENDOR_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 #VENDOR_SECURITY_PATCH := 2021-04-01
