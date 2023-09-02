@@ -54,4 +54,24 @@
         <item>app.grapheneos.camera</item>
     </string-array>
 
+    <!-- Whether charging control should be enabled by default -->
+    <bool name="config_chargingControlEnabled">false</bool>
+
+    <!-- Default charging control mode.
+         This integer should be set to:
+
+         1 - auto - Use the alarm to calculate the time range when to activate charging control
+         2 - custom - Use time range when the device is usually charging for hours
+         3 - limit - Just limit charging -->
+    <integer name="config_defaultChargingControlMode">3</integer>
+
+    <!-- Default charging limit. -->
+    <integer name="config_defaultChargingControlLimit">90</integer>
+
+    <!-- For a device that cannot bypass battery when charging stops (that is, the battery current
+         is 0mA when charging stops), the battery will gradually discharge. So we need to make it
+         recharge when the battery level is lower than a threshold. Set this so that the device
+         will be charged between (limit - val) and limit. -->
+    <integer name="config_chargingControlBatteryRechargeMargin">30</integer>
+
 </resources>
