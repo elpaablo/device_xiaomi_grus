@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="PreferenceTheme" parent="@style/PreferenceThemeOverlay.SettingsBase" />
+
+    <style name="TextAppearance.Medium" parent="@android:style/TextAppearance.Material.Medium" />
+</resources>
+

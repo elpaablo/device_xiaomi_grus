@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+
+    <string name="additional_system_update" translatable="false">true</string>
+    <string name="additional_system_update_menu" translatable="false">true</string>
+
+    <!-- Carrier_enabled editable -->
+    <bool name="config_allow_edit_carrier_enabled" translatable="false">true</bool>
+
+    <!-- The number of vibration intensity levels supported by the device.
+
+         Note that this should correspond to the ability to vary the vibration amplitude, with
+         enough dynamic range to have at least as many distinct intensity levels as defined here.
+
+         Supported values are 1, 2, 3. If '1', the settings app will use a toggle for the settings,
+         otherwise a slider. If '3', the settings app maps intensities directly to the levels
+         supported by the Vibrator HAL APIs. If '2', then the levels will be mapped to
+         VIBRATION_INTENSITY_LOW and VIBRATION_INTENSITY_HIGH, which gives the most range for
+         scaling vibrations. The medium intensity will be skipped.
+
+         The default intensity values are configured at
+         frameworks/base/core/res/res/values/config.xml's config_default[type]VibrationIntensity.
+         Make sure that each default intensity value is consistent with the supported levels set
+         here. If this settings supports only 2 levels, for example, then the default intensity
+         should be either LOW (1) or HIGH (3).
+    -->
+    <integer name="config_vibration_supported_intensity_levels">1</integer>
+
+    <!-- The default intensity level for alarm vibrations. See
+         Settings.System.ALARM_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultAlarmVibrationIntensity">3</integer>
+    <!-- The default intensity level for haptic feedback. See
+         Settings.System.HAPTIC_FEEDBACK_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultHapticFeedbackIntensity">2</integer>
+    <!-- The default intensity level for media vibrations. See
+         Settings.System.MEDIA_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultMediaVibrationIntensity">2</integer>
+    <!-- The default intensity level for notification vibrations. See
+         Settings.System.NOTIFICATION_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultNotificationVibrationIntensity">3</integer>
+    <!-- The default intensity level for ring vibrations. See
+         Settings.System.RING_VIBRATION_INTENSITY more details on the constant values and
+         meanings. -->
+    <integer name="config_defaultRingVibrationIntensity">3</integer>
+
+    <!--
+        Whether or not the homepage should be powered by legacy suggestion (versus contextual cards)
+        Default to true as not all devices support contextual cards.
+    -->
+    <bool name="config_use_legacy_suggestion">true</bool>
+
+    <!-- Whether or not homepage should display user's account avatar -->
+    <bool name="config_show_avatar_in_homepage">true</bool>
+
+    <!-- Whether or not device header widget tile should display in device info page -->
+    <bool name="config_show_device_header_in_device_info">false</bool>
+
+    <!-- Display additional System Update menu if true -->
+    <bool name="config_additional_system_update_setting_enable">false</bool>
+
+    <!-- Whether to handle slot change events -->
+    <bool name="config_handle_sim_slot_change">true</bool>
+
+    <!-- Whether to show min/max refresh rate in display settings -->
+    <bool name="config_show_refresh_rate_controls">false</bool>
+    <bool name="config_supports_dynamic_refresh_rate_controls">false</bool>
+
+    <!-- Fingerprint -->
+    <bool name="config_is_front_facing_fps" translatable="false">true</bool>
+
+</resources>

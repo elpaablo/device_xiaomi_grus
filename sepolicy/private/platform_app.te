@@ -1,0 +1,4 @@
+# allow com.android.systemui to read measured fps value
+allow platform_app sysfs_measured_fps:file r_file_perms;
+
+set_prop(platform_app, udfps_prop)

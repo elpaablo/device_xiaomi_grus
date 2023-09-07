@@ -1,0 +1,132 @@
+# Copyright (c) 2013-2018, The Linux Foundation. All rights reserved.
+#
+# Redistribution and use in source and binary forms, with or without
+# modification, are permitted provided that the following conditions are
+# met:
+#     * Redistributions of source code must retain the above copyright
+#       notice, this list of conditions and the following disclaimer.
+#     * Redistributions in binary form must reproduce the above
+#       copyright notice, this list of conditions and the following
+#       disclaimer in the documentation and/or other materials provided
+#       with the distribution.
+#     * Neither the name of The Linux Foundation nor the names of its
+#       contributors may be used to endorse or promote products derived
+#       from this software without specific prior written permission.
+#
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
+# WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
+# MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
+# ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
+# BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+# CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+# SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
+# BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
+# WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
+# OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
+# IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+on post-fs
+    mkdir /mnt/vendor/dsp 0770 root root
+    copy /vendor/dsp/cdsp/fastrpc_shell_3 /mnt/vendor/dsp/fastrpc_shell_3
+    chmod 0644 /mnt/vendor/dsp/fastrpc_shell_3
+    mount none /mnt/vendor/dsp/fastrpc_shell_3 /vendor/dsp/cdsp/fastrpc_shell_3 bind
+
+
+on post-fs-data
+    # create dt2w sysnode
+    mkdir /sys/touchpanel/double_tap 0644 system system
+
+    # create goodix dirs
+    mkdir /data/vendor/goodix 0770 system system
+    mkdir /data/vendor/goodix/gf_data/authenticate 0770 system system
+    mkdir /data/vendor/goodix/gf_data/enroll 0770 system system
+    mkdir /mnt/vendor/persist/goodix 0770 system system
+
+on boot
+    chown system system /sys/class/backlight/panel0-backlight/brightness
+    chown system system /sys/class/backlight/panel0-backlight/brightness_clone
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_status
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+    
+    chmod 0666 /sys/class/backlight/panel0-backlight/brightness
+    chmod 0666 /sys/class/backlight/panel0-backlight/brightness_clone
+    chmod 0440 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_status
+    chmod 0440 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/doze_mode
+    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/hbm
+
+    # FOD
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_hbm
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
+    chown system system /sys/devices/virtual/touch/tp_dev/fod_status
+
+    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_hbm
+    chmod 0440 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
+    chmod 0666 /sys/devices/virtual/touch/tp_dev/fod_status
+
+    chown system system /sys/devices/platform/soc/soc:fingerprint_goodix/uevent
+    chmod 0666 /dev/input/event2
+
+    # Enable fod status by default
+    write /sys/devices/virtual/touch/tp_dev/fod_status 1
+    write /sys/touchpanel/double_tap 1
+
+    # DC dimming
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
+    chmod 0666 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable
+
+    # vibrator
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_override
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_user
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_mv_strong
+    chown system system /sys/devices/platform/soc/c440000.qcom,spmi/spmi-0/spmi0-01/c440000.qcom,spmi:qcom,pm660@1:qcom,haptics@c000/leds/vibrator/vmax_call
+
+    # FPS info
+    chown system system /sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps
+
+    # System/CPU info
+    chown system system /sys/class/thermal/thermal_zone9/type
+    chown system system /sys/class/thermal/thermal_zone9/temp
+    chown system system /sys/class/power_supply/battery/temp
+    chown system system /sys/kernel/gpu/gpu_clock
+    chown system system /sys/kernel/gpu/gpu_busy
+
+    # kcal
+    chown system system /sys/module/msm_drm/parameters/kcal_enable
+    chown system system /sys/module/msm_drm/parameters/kcal_cont
+    chown system system /sys/module/msm_drm/parameters/kcal_hue
+    chown system system /sys/module/msm_drm/parameters/kcal_red
+    chown system system /sys/module/msm_drm/parameters/kcal_blue
+    chown system system /sys/module/msm_drm/parameters/kcal_green
+    chown system system /sys/module/msm_drm/parameters/kcal_sat
+    chown system system /sys/module/msm_drm/parameters/kcal_val
+
+     # kcal
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_enable
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_cont
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_hue
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_red
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_blue
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_green
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_sat
+    chmod 0664 /sys/module/msm_drm/parameters/kcal_val
+
+    # restricted charging/current
+    chown system system /sys/class/qcom-battery/restricted_current
+    chown system system /sys/class/qcom-battery/restricted_charging
+    chmod 664 /sys/class/qcom-battery/restricted_current
+    chmod 664 /sys/class/qcom-battery/restricted_charging
+    
+    # smart charging
+    chown system system /sys/class/power_supply/battery/input_suspend
+    chmod 0664 /sys/class/power_supply/battery/input_suspend
+
+    # thermal
+    chown system system /sys/class/thermal/thermal_message/sconfig
+    chmod 664 /sys/class/thermal/thermal_message/sconfig
+
+service vendor.remosaic_daemon /vendor/bin/remosaic_daemon
+    class late_start
+    user camera
+    group camera

@@ -1,0 +1,17 @@
+on property:vendor.udfps.status=1
+    write /sys/devices/virtual/touch/tp_dev/fod_status 1
+
+on property:vendor.udfps.status=0
+    write /sys/devices/virtual/touch/tp_dev/fod_status 0
+
+on property:vendor.udfps.hbm=1
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_hbm 1
+
+on property:vendor.udfps.hbm=0
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/dimlayer_hbm 0
+
+on property:vendor.udfps.dcdim=1
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable 1
+
+on property:vendor.udfps.dcdim=0
+    write /sys/devices/platform/soc/soc:qcom,dsi-display-primary/msm_fb_ea_enable 0

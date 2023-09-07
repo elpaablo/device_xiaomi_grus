@@ -1,0 +1,108 @@
+# ADB debugging
+#ro.secure=1
+#ro.adb.secure=0
+persist.service.adb.enable=1
+persist.service.debuggable=1
+#persist.sys.usb.config=mtp,adb
+
+# Audio
+audio.deep_buffer.media=true
+audio.offload.buffer.size.kb=32
+audio.offload.gapless.enabled=true
+audio.offload.video=true
+persist.audio.button_jack.profile=volume
+persist.audio.button_jack.switch=0
+persist.audio.fluence.speaker=true
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicerec=false
+ro.af.client_heap_size_kbyte=7168
+ro.config.media_vol_default=10
+ro.config.vc_call_vol_steps=11
+ro.qc.sdk.audio.fluencetype=none
+ro.qc.sdk.audio.ssr=false
+tunnel.audio.encode=true
+use.voice.path.for.pcm.voip=true
+
+# Bluetooth
+bt.max.hfpclient.connections=1
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.btsatck.absvolfeature=true
+persist.vendor.btstack.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac
+persist.vendor.btstack.enable.splita2dp=true
+ro.bluetooth.emb_wp_mode=true
+ro.bluetooth.wipower=true
+vendor.bluetooth.soc=cherokee
+
+# Camera
+camera.disable_zsl_mode=true
+#vendor.camera.aux.packagelist=com.android.camera,org.codeaurora.snapcam,org.lineageos.aperture,org.lineageos.aperture.dev
+vendor.camera.aux.packageexcludelist=org.telegram.messenger,com.microsoft.teams,com.discord
+
+# Charger
+ro.charger.enable_suspend=true
+
+# Data modules
+persist.vendor.data.mode=concurrent
+ro.vendor.use_data_netmgrd=true
+
+# Display
+ro.surface_flinger.force_hwc_copy_for_virtual_displays=true
+ro.surface_flinger.max_frame_buffer_acquired_buffers=3
+ro.surface_flinger.max_virtual_display_dimension=4096
+ro.surface_flinger.protected_contents=true
+
+# DPM
+persist.vendor.dpm.feature=1
+
+# Fwk detect
+ro.vendor.qti.va_aosp.support=1
+
+# Graphics
+debug.sf.enable_hwc_vds=0
+debug.sf.latch_unsignaled=0
+debug.sf.disable_client_composition_cache=1
+
+# Media
+media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+
+# Navigation
+qemu.hw.mainkeys=0
+
+# Netflix custom property
+ro.netflix.bsp_rev=Q670-14477-1
+
+# Pre-Rendering
+ro.vendor.perf.scroll_opt=true
+
+# RCS
+persist.rcs.supported=0
+
+# RIL
+DEVICE_PROVISIONED=1
+persist.radio.NO_STAPA=1
+persist.radio.VT_CAM_INTERFACE=1
+persist.radio.VT_HYBRID_ENABLE=1
+persist.radio.apm_sim_not_pwdn=1
+persist.radio.dynamic_sar=false
+persist.radio.multisim.config=dsds
+persist.vendor.radio.atfwd.start=true
+persist.vendor.radio.data_con_rprt=1
+persist.vendor.radio.enable_temp_dds=true
+persist.vendor.radio.force_on_dc=true
+persist.vendor.radio.manual_nw_rej_ct=1
+persist.vendor.radio.rat_on=combine
+persist.vendor.radio.redir_party_num=1
+persist.vendor.radio.report_codec=1
+ril.subscription.types=RUIM
+ro.com.android.dataroaming=false
+ro.telephony.default_cdma_sub=0
+ro.telephony.default_network=33,33
+telephony.lteOnCdmaDevice=1
+
+# Watchdog
+ro.hw_timeout_multiplier=3
+
+# ZRAM
+ro.zram.first_wb_delay_mins=180
+ro.zram.mark_idle_delay_mins=60
+ro.zram.periodic_wb_delay_hours=24

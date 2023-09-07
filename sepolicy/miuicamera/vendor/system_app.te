@@ -1,0 +1,2 @@
+allow system_app vendor_default_prop:file { map getattr open };
+allow system_app settingslib_prop:file { read map getattr open};

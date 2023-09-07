@@ -1,0 +1,5 @@
+# Measured FPS
+/sys/devices/platform/soc/ae00000.qcom,mdss_mdp/drm/card0/sde-crtc-0/measured_fps        u:object_r:sysfs_measured_fps:s0
+
+# Charge only mOde
+/system/bin/chargeonlymode                    u:object_r:charger_exec:s0
