@@ -160,10 +160,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor
 
-# fastbootd
-PRODUCT_PACKAGES += \
-    fastbootd
-
 # Fingerprint
 TARGET_HAS_UDFPS := true
 
@@ -304,12 +300,6 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay-lineage
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
-
-# Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/flash_super_dummy.sh:install/bin/flash_super_dummy.sh
 
 # Perf
 PRODUCT_PACKAGES += \

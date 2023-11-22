@@ -17,13 +17,6 @@
 import common
 import re
 
-def FullOTA_InstallBegin(info):
-  info.script.AppendExtra('map_partition("system");')
-  info.script.AppendExtra('map_partition("vendor");')
-  info.script.AppendExtra('map_partition("product");')
-  info.script.AppendExtra('map_partition("system_ext");')
-  return
-
 def FullOTA_InstallEnd(info):
   OTA_InstallEnd(info)
   return
@@ -48,9 +41,4 @@ def OTA_InstallEnd(info):
   AddImage(info, "IMAGES", "vbmeta.img", "/dev/block/bootdevice/by-name/vbmeta")
   return
 
-def FullOTA_InstallBegin(info):
-  AddImage(info, "RADIO", "super_dummy.img", "/tmp/super_dummy.img");
-  info.script.AppendExtra('package_extract_file("install/bin/flash_super_dummy.sh", "/tmp/flash_super_dummy.sh");')
-  info.script.AppendExtra('set_metadata("/tmp/flash_super_dummy.sh", "uid", 0, "gid", 0, "mode", 0755);')
-  info.script.AppendExtra('run_program("/tmp/flash_super_dummy.sh");')
   return
