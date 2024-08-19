@@ -1,3 +1,6 @@
 # DPM
 persist.vendor.dpm.feature=11
 persist.vendor.dpm.loglevel=0
+
+# Telephony
+ro.telephony.handle_audio_direction_changes_between_call_state_changes=false
