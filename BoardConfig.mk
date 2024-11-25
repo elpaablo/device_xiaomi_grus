@@ -30,14 +30,7 @@ TARGET_2ND_CPU_VARIANT_RUNTIME := kryo385
 
 # Audio
 AUDIO_FEATURE_ENABLED_EXTENDED_COMPRESS_FORMAT := true
-AUDIO_FEATURE_ENABLED_EXTN_FORMATS := true
-AUDIO_FEATURE_ENABLED_GEF_SUPPORT := true
-AUDIO_FEATURE_ENABLED_HDMI_SPK := true
-AUDIO_FEATURE_ENABLED_PROXY_DEVICE := true
-AUDIO_FEATURE_ENABLED_SSR := true
-BOARD_SUPPORTS_SOUND_TRIGGER := true
-BOARD_USES_ALSA_AUDIO := true
-USE_CUSTOM_AUDIO_POLICY := 1
+TARGET_PROVIDES_AUDIO_EXTNS := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := sdm710
@@ -65,6 +58,9 @@ BOARD_BOOT_HEADER_VERSION := 2
 BOARD_KERNEL_BASE := 0x00000000
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_CMDLINE := console=ttyMSM0,115200n8 earlycon=msm_geni_serial,0xA90000 androidboot.hardware=qcom androidboot.console=ttyMSM0 msm_rtb.filter=0x237 ehci-hcd.park=3 lpm_levels.sleep_disabled=1 service_locator.enable=1 androidboot.configfs=true androidboot.usbcontroller=a600000.dwc3 swiotlb=1 loop.max_part=7
+ifeq ($(TARGET_BUILD_PERMISSIVE),true)
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+endif
 BOARD_KERNEL_CMDLINE += androidboot.init_fatal_reboot_target=recovery
 BOARD_KERNEL_IMAGE_NAME := Image
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
@@ -117,6 +113,9 @@ $(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
 BOARD_VENDOR := xiaomi
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_BOARD_PLATFORM := sdm710
+
+# Power
+TARGET_POWER_LIBPERFMGR_MODE_EXTENSION_LIB := //$(DEVICE_PATH):libperfmgr-ext-xiaomi
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
