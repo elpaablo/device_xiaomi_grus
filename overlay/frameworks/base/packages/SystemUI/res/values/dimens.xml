@@ -34,4 +34,7 @@
     <!-- Microns/ums (1000 um = 1mm) per pixel for the given device. If unspecified, UI that
          relies on this value will not be sized correctly. -->
     <item name="pixel_pitch" format="float" type="dimen">58.84</item>
+
+    <!-- temp, it'll be moved to fwb -->
+    <dimen name="status_bar_padding_start">6dp</dimen>
 </resources>
